@@ -1,0 +1,36 @@
+---
+title: "proj"
+author: "Cassie Goe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r, eval=TRUE,echo=TRUE}
+school_shootings <- read_csv("school-shootings-data.csv")
+school_shootings %>%
+  group_by(year) %>%
+  mutate(num_shootings = n()) 
+```
+
+```{r, eval=TRUE,echo=TRUE}
+ggplot(data = shool_shootings,
+       mapping = aes(x = year,
+                     y = bill_length_mm,
+                     color = species,
+                     shape = island,
+                     size = body_mass_g,
+                     alpha = flipper_length_mm)) +
+  geom_point( size = 2, alpha = 0.5) +
+  labs(title ="Bill depth and length",
+       subtitle = "Dimensions for Adelle, Chinstrap, and Gentoo Penguins",
+       x = "Bill depth (mm)", y = "Bill length (mm)",
+       color = "species",
+       caption = "Sources: Palmer Station LTER/ palmerpenguins package") +
+       scale_colour_viridis_d()
+
+```
