@@ -1,0 +1,12 @@
+name: schoolshooting_app
+title: schoolshooting_app
+username: cassiegoe
+account: cassiegoe
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11575816
+bundleId: 8411873
+url: https://cassiegoe.shinyapps.io/schoolshooting_app/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
