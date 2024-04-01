@@ -1,14 +1,14 @@
 {
-    "id": "CC849EC8",
-    "path": "C:/Users/cassi/OneDrive - National University of Singapore/Documents/AY2S2/NM2207/cassiegoe.github.io/about.qmd",
-    "project_path": "about.qmd",
+    "id": "BC97DFCA",
+    "path": "C:/Users/cassi/OneDrive - National University of Singapore/Documents/AY2S2/NM2207/cassiegoe.github.io/index.qmd",
+    "project_path": "index.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "1881622528",
     "contents": "",
     "dirty": false,
-    "created": 1711966529008.0,
+    "created": 1711990393886.0,
     "source_on_save": false,
-    "relative_order": 1,
+    "relative_order": 3,
     "properties": {
         "rmdVisualMode": "true",
         "rmdVisualWrapConfigured": "true",
@@ -16,14 +16,16 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "24:0"
+        "rmdVisualModeLocation": "2:0",
+        "cursorPosition": "16,0",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1711966312,
+    "lastKnownWriteTime": 1711990591,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1711966312,
+    "last_content_update": 1711990591173,
     "read_only": false,
     "read_only_alternatives": []
 }
