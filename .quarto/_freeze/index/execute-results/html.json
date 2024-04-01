@@ -1,7 +1,7 @@
 {
-  "hash": "1c38820a79ec06fdeaae3de35694e540",
+  "hash": "08f167d1e656f26bc51593b374294c8a",
   "result": {
-    "markdown": "---\ntitle: \"cassiegoe.github.io\"\n---\n\n\nhello.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "markdown": "---\ntitle: \"School Shootings in the US\"\n---\n\n\nhello.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
