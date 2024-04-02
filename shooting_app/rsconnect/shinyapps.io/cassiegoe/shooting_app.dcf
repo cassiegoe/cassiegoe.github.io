@@ -5,7 +5,7 @@ account: cassiegoe
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11634425
-bundleId: 8446432
+bundleId: 8446457
 url: https://cassiegoe.shinyapps.io/shooting_app/
 version: 1
 asMultiple: FALSE

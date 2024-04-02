@@ -2,6 +2,7 @@ library(shiny)
 library(tidyverse)
 library(dplyr)
 library(plotly)
+library(bslib)
 
 shooting_data <- read.csv("school-shootings-data.csv")
 df <- data.frame(shooting_data)
