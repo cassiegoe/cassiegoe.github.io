@@ -1,5 +1,5 @@
 ---
-title: "School Shootings in the US"
+title: "How Can We Prevent Gun Violence in Schools?"
 ---
 
 ### Self Introduction
@@ -14,4 +14,7 @@ CSV file: \[Download CSV file\](https://www.dropbox.com/scl/fi/tt3qc4dd9zwoqkysu
 
 ```{=html}
 <iframe height="400" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/shooting_app/"> </iframe>
+```
+```{=html}
+image_read("gun violence peace.gif)
 ```

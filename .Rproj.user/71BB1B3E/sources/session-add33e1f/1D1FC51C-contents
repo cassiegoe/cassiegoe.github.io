@@ -1,0 +1,58 @@
+---
+title: "Challenge-9"
+author: "Cassie Goe"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Theme 
+The theme of the design has been changed to 'superhero' using bslib package. 
+```{r, out.height= "200px",out.width= "300px",echo=FALSE,eval=TRUE,fig.cap="Theme", fig.align='center'}
+knitr::include_graphics("Theme.png") 
+```
+
+# 2. Title
+Title has been changed to 'penguins' and is bolded.
+```{r, out.height= "150px",out.width= "200px",echo=FALSE,eval=TRUE,fig.cap="Title", fig.align='center'}
+knitr::include_graphics("Title.png") 
+```
+
+# 3.Plot type
+The type of plot has been changed from histogram to a density plot.
+```{r, out.height= "200px",out.width= "300px",echo=FALSE,eval=TRUE,fig.cap="Plot Type", fig.align='center'}
+knitr::include_graphics("Plottype.png") 
+```
+
+# 4.Color of density plot
+The density plot is filled, and a dropdown menu is added to the sidebar panel, enabling selection of the color for the density plot from options including blue, purple, and green.
+```{r, out.height= "200px",out.width= "300px",echo=FALSE,eval=TRUE,fig.cap="Color Options", fig.align='center'}
+knitr::include_graphics("Coloroptions.png") 
+```
+
+# 5. Plot type options 
+Options for the distribution type have been updated to include "bimodal" distribution, and the "exp" and "log" options have been removed. These choices can be selected using buttons to change the plot.
+```{r, out.height= "200px",out.width= "300px",echo=FALSE,eval=TRUE,fig.cap="Plot Options", fig.align='center'}
+knitr::include_graphics("Plotoptions.png") 
+```
+```{r, out.height= "200px",out.width= "300px",echo=FALSE,eval=TRUE,fig.cap="Bimodal Distribution", fig.align='center'}
+knitr::include_graphics("Bimodal.png") 
+```
+
+# 6. Addition of card
+A card has been added to the top of the main panel with text (using function value_box())and an icon (using bsicon package).
+```{r, out.height= "200px",out.width= "300px",echo=FALSE,eval=TRUE,fig.cap="Card", fig.align='center'}
+knitr::include_graphics("Card.png") 
+```
+
+# 7. Added image
+Image of penguin added to the sidebar panel at the bottom
+```{r, out.height= "300px",out.width= "200px",echo=FALSE,eval=TRUE,fig.cap="Penguin", fig.align='center'}
+knitr::include_graphics("Penguin.png") 
+```
+
+
+

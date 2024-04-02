@@ -10,22 +10,44 @@ shooting_data <- shooting_data %>%
   group_by(year) %>%
   mutate(Incidents = n())
 
-# Define UI for application that draws a histogram
+# Define UI for application 
 ui <- fluidPage(
   titlePanel("How Can We Prevent Gun Violence in Schools?"),
-  sidebarLayout(
-    sidebarPanel(sliderInput("samplesize","Sample Size:",min = 100,max = 10000,value = 1000)),
-    mainPanel(plotOutput("distPlot"),
-              plotlyOutput("shooting_plot"))
-  )
+  
+  #self-intro
+  h4(strong("Self-Intro")),
+  p(style="text-align: justify; font-size = 25px",
+    "Insert Self-Intro"),
+  br(),
+  
+  #Data set intro
+  h4(strong("Data Set Intro")),
+  p(style="text-align: justify; font-size = 25px",
+    "Insert Data Set Intro"),
+  br(),
+  
+  #current situation
+  h4(strong("Current Situation")),
+  p(style="text-align: justify; font-size = 25px",
+    "Insert current situation"),
+  br(),
+  
+  mainPanel(
+    width = 12,
+    fluidRow( column(8, align="center",
+                     plotlyOutput("shooting_plot")
+    )),
+    
+  layout_sidebar(
+      sidebar = sidebar("Sidebar"),
+      "Main contents"
+    ))
+
 )
+
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
-  output$distPlot <- renderPlot({
-    hist(rnorm(input$samplesize),col='darkorchid',xlab="Sample",main="Standard Normally Distributed Sample")},
-    height=300
-  )
   
   #School Shootings Over the Years
   output$shooting_plot <- renderPlotly({

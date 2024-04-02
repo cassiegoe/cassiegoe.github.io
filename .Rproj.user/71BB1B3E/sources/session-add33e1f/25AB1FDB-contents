@@ -1,0 +1,50 @@
+---
+title: "Diary entry-9"
+author: "Cassie Goe"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Question
+How can we prevent gun violence in schools?
+
+# Why is this an important question?
+1. According  to the Johns Hopkins Center for Gun Policy and ResearchQuest, the rate of firearm homicides in the United States is 20 times higher than that in other countries. Additionally, recent data from U.S. News & World Report indicates a disturbing increase in school shooting incidents, with a record-breaking 346 occurrences reported in 2023. Thus, the escalating frequency of school shootings in the US poses significant concerns regarding public safety and the quality of education for children in the US.
+
+2. In  a survey conducted by the Pew Research Center, a substantial number of teenagers in the US (57%) and parents of children within the same age group (63%) express anxiety regarding the potential occurrence of a school shooting occurring at their school. This heightened concern reflects a pervasive fear within communities and underscores the urgent need to address the root causes of gun violence.
+
+3. The International  Society for Research on Aggression (ISRA) identified two main categories of risk factors linked to acts of extreme violence: personal risk factors associated with the individual and environmental factors associated with the social environment or situation. With the complexity of violent behavior, risk factors tend to work together to perpetuate the cycle of violence. Therefore, it is valuable to analyse which of these risk factors may be relevant in the context of school shootings to inform the development of policies and preventive measures.
+
+# Variables to be used
+Identify factors that may contribute to frequency of school shootings to devise effective measures that can reduce occurrences of such incidents.
+
+### Environmental factors:
+
+1. Location -> frequency of school shootings in each state
+(Variable: state)
+
+2. School type -> frequency of school shootings in public vs private schools
+(Variable: school_type)
+
+3. Safety measures -> relationship between presence of security personnel and severity of incident  
+(Variables: Resource_officer, casualties)
+
+
+### Motivational factors:
+
+1. Accessibility to firearms
+(Variable: weapon_source)
+
+2. Motivation behind the shooting -> shooting type and relationship of shooter with the school
+(Variables: shooting_type, shooter_relationship1 and shooter_relationship2)
+
+# Potential Challenges
+1. For some of the variables there are many options included which can lead to cluttered visualizations, making it challenging to determine if there are any meaningful patterns or trends. So grouping similar options or using interactive plots may be necessary to enhance clarity. 
+
+2. Some of the incidents involve multiple shooters and the information of each shooter is grouped into one variable (e.g. shooter_relationship1 and shooter_relationship2). When analysing the data, information from these variables may need to be consolidated to gain a comprehensive understanding of the situation.
+
+

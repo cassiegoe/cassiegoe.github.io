@@ -1,0 +1,14 @@
+---
+title: "Code along & Challenge-9"
+author: "Cassie Goe"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r, eval=TRUE,echo=TRUE}
+library(shiny)
+
+runExample("01_hello")
+
+```
+

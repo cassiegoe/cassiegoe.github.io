@@ -1,0 +1,144 @@
+---
+title: "Challenge-5"
+author: "Cassie Goe"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Questions
+<br>
+
+#### Question-1: Local Variable Shadowing 
+
+Create an R function that defines a global variable called `x` with a value of 5. Inside the function, declare a local variable also named `x` with a value of 10. Print the value of `x` both inside and outside the function to demonstrate shadowing.
+
+**Solutions:**
+```{r, eval=TRUE,echo=TRUE}
+# Enter code here
+x <- 5
+value_of_x <- function(x){
+  x <- 10
+    print(paste0(x))
+}
+value_of_x()
+sprintf("The final value of x after reassigning it to a different vlaue inside the function is %d",x)
+```
+
+<br>
+
+#### Question-2: Modify Global Variable
+
+Create an R function that takes an argument and adds it to a global variable called `total`. Call the function multiple times with different arguments to accumulate the values in `total`.
+
+**Solutions:**
+
+```{r, eval=TRUE,echo=TRUE}
+# Enter code here
+total <- 0
+  accumulate_total <- function(values){
+     total + values
+  }
+accumulate_total(5)
+accumulate_total(10)
+accumulate_total(15)
+
+```
+<br>
+
+#### Question-3: Global and Local Interaction 
+
+Write an R program that includes a global variable `total` with an initial value of 100. Create a function that takes an argument, adds it to `total`, and returns the updated `total`. Demonstrate how this function interacts with the global variable.
+
+**Solutions:**
+
+```{r, eval=TRUE,echo=TRUE}
+# Enter code here
+total <- 100
+total_value <- function(value) {
+  value + total
+}
+
+total_value(100)
+
+```
+<br>
+
+#### Question-4: Nested Functions
+
+Define a function `outer_function` that declares a local variable `x` with a value of 5. Inside `outer_function`, define another function `inner_function` that prints the value of `x`. Call both functions to show how the inner function accesses the variable from the outer function's scope.
+
+**Solutions:**
+
+```{r, eval=TRUE,echo=TRUE}
+# Enter code here
+outer_function <- function(x) {
+  x <- 5
+  inner_function <- function(x) {
+    print(paste0("Value of x from inner function is ", x))
+  }
+  print(paste0("Value of x from outer function is ", x))
+  inner_function(x)
+}
+
+outer_function(x)
+
+```
+<br>
+
+#### Question-5: Meme Generator Function
+
+Create a function that takes a text input and generates a humorous meme with the text overlaid on an image of your choice. You can use the `magick` package for image manipulation. You can find more details about the commands offered by the package, with some examples of annotating images here: https://cran.r-project.org/web/packages/magick/vignettes/intro.html
+
+**Solutions:**
+
+```{r, eval=TRUE,echo=TRUE}
+# Enter code here
+library(magick)
+image_url <- ('https://upload.wikimedia.org/wikipedia/en/thumb/4/45/Side_Eyeing_Chloe.jpg/330px-Side_Eyeing_Chloe.jpg') 
+text <- "Uhh...Okay"
+
+meme <- function(image_url,text) {
+  meme_image <- image_read(image_url) 
+  
+  annotated_image <- meme_image %>%
+  image_annotate(text, size = 40, gravity = "south", color = "green")
+}
+annotated_image <- meme(image_url, text)
+print(annotated_image)
+
+
+```
+
+<br>
+
+#### Question-6: Text Analysis Game  
+
+Develop a text analysis game in which the user inputs a sentence, and the R function provides statistics like the number of words, characters, and average word length. Reward the user with a "communication skill level" based on their input.
+
+**Solutions:**
+
+```{r, eval=TRUE,echo=TRUE}
+# Enter code here
+
+text_analysis_game <- function(sentence) {
+num_words <- length(strsplit(sentence, ' ')[[1]])
+num_char <- nchar(sentence)
+avg_word_length <- num_char/num_words
+
+communication_skill_level <- ifelse(avg_word_length >= 10, "Advanced",
+                                     ifelse(avg_word_length >= 5, "Intermediate", "Beginner"))
+
+print(paste0("Number of Words:", num_words))
+print(paste0("Number of Characters:", num_char))
+print(paste0("Average Word Length:", avg_word_length))
+print(paste0("Communication Skill Level:", communication_skill_level))
+}
+text_analysis_game("The fox jumped over the wall.")
+```
+<br>

@@ -1,0 +1,30 @@
+---
+title: "Challenge-1"
+author: "Cassie Goe"
+date: "2024-01-16"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## About Me
+
+HI! I'm Cassie and I major in psychology. During my free time, I enjoy cycling and hiking!
+
+```{r, out.height= "350px",out.width= "800px",echo=FALSE,eval=TRUE,fig.cap="Hello!"}
+knitr::include_graphics("mypic.jpg") 
+```
+
+```{r, out.height= "350px",out.width= "500px",echo=FALSE,eval=TRUE,fig.cap="screenshot"}
+knitr::include_graphics("screenshot.png") 
+```
+
+```{r}
+library(shiny)
+runExample("04_mpg")
+```
+
