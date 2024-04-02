@@ -33,21 +33,37 @@ ui <- fluidPage(
     "Insert current situation"),
   br(),
   
+  #plot1_overtheyears
   mainPanel(
     width = 12,
     fluidRow( column(8, align="center",
                      plotlyOutput("shooting_plot")
     )),
     
+    br(),
+    p(style="text-align: justify; font-size = 25px",
+      "Insert elaboration of graph and prevalence"),
+    br(),
+    h4(strong("Information on incidents")),
+  
+  #cards1_incidents    
   layout_sidebar(
-      sidebar = sidebar("Sidebar"),
+      sidebar = sidebar(
+        selectInput("year_select_sidebar", "Select Year:", choices = unique(shooting_data$year))
+      ),
       "Main contents"
-    ))
+    ),
+  
+  br(), 
+  p(style="text-align: justify; font-size = 25px",
+    "Insert link to factors and solution"),
+  ),
+  
+  )
 
-)
 
 
-# Define server logic required to draw a histogram
+# Define server logic required to draw 
 server <- function(input, output) {
   
   #School Shootings Over the Years
