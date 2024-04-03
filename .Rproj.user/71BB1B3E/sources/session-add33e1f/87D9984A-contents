@@ -1,0 +1,17 @@
+---
+title: "proj"
+author: "Cassie Goe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{}
+{r, eval=TRUE,echo=TRUE}
+read_csv("school-shootings-data.csv")
+
+```
