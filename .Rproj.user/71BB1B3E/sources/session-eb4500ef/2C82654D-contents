@@ -13,7 +13,7 @@ Link to dataset: \<<https://www.kaggle.com/datasets/joebeachcapital/school-shoot
 CSV file: \[Download CSV file\](https://www.dropbox.com/scl/fi/tt3qc4dd9zwoqkysua9lh/school-shootings-data.csv?rlkey=nkirxyg4frvkh2kns81bnxvs6&dl=0)
 
 ```{=html}
-<iframe height="1000" width="120%" frameborder="no" src="https://cassiegoe.shinyapps.io/shooting_app/"> </iframe>
+<iframe height="5000" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/shooting_app/"> </iframe>
 ```
 
 ### Current situation (prevalence)

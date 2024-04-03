@@ -12,6 +12,10 @@ shooting_data <- shooting_data %>%
   group_by(year) %>%
   mutate(Incidents = n())
 
+incident_summary <- shooting_data %>%
+  group_by(school_type, resource_officer) %>%
+  summarize(total_incidents = n())
+
 # Define UI for application 
 ui <- fluidPage(
   
@@ -64,12 +68,12 @@ ui <- fluidPage(
     p(style="text-align: justify; font-size = 25px",
       "Insert link to factors and solution")),
   
-  #section for school type
-  h4(strong("School Type")),
+  #school environment: section for school type & security
+  h4(strong("School Environment")),
   fluidRow(
-      column(6, 
-           plotOutput("schooltype_plot")),
-      column(6, 
+      column(8, 
+             plotlyOutput("officerxtype_plot")),
+      column(4, 
            p(style="text-align: justify; font-size = 20px",
              "Insert elab"))
   ),
@@ -84,17 +88,10 @@ ui <- fluidPage(
       "Insert Solution")
   ),
   
-  #section for school security
-  br(),
-  h4(strong("School Security -> remove? ")),
-  p(style="text-align: justify; font-size = 20px",
-    "Insert elab"),
-  p(style="text-align: justify; font-size = 20px",
-    "Insert plot"),
-  plotOutput("schoolsecurity_plot"),
-  
+
   #Section for access to firearms
-  h4(strong("Acess to Firearms")),
+  br(),
+  h4(strong("Access to Firearms")),
   p(style="text-align: justify; font-size = 20px",
     "Insert plot"),
   
@@ -135,6 +132,9 @@ ui <- fluidPage(
            p(style="text-align: justify; font-size = 20px",
              "Insert elab"))
   ),
+  
+  plotlyOutput("shootingtype_plot"),
+  
   br(),
   card(
     style = "background-color: white; font-family: Arial, sans-serif;", 
@@ -148,12 +148,11 @@ ui <- fluidPage(
   
   #section for indiv characteristics
   br(),
-  h4(strong("Characteristics? - age, race etc")),
+  h4(strong("Age")),
   
   fluidRow(
     column(6, 
-           p(style="text-align: justify; font-size = 20px",
-             "Insert plot")),
+           plotlyOutput("age_plot")),
     column(6, 
            p(style="text-align: justify; font-size = 20px",
              "Insert elab"))
@@ -177,25 +176,17 @@ server <- function(input, output) {
       theme_minimal()
     ggplotly(p)
   })
-  
-  #School type bar plot
-  output$schooltype_plot <- renderPlot({
-    ggplot(data = shooting_data, aes(x=school_type)) +
-      geom_bar(fill = "black", color = "black") +
-      labs(title = "Number of School Shootings by School Type",
+
+  # officer x type plot
+  output$officerxtype_plot <- renderPlotly({
+    y <- ggplot(data = incident_summary, aes(x = school_type, y = total_incidents, fill = resource_officer)) +
+      geom_bar(stat = "identity", color = "black", position = position_dodge(width = 0.9)) +
+      labs(title = "School Type and Resource Officer Presence",
            x = "School Type",
-           y = "Number of Incidents") +
+           y = "Number of Incidents",
+           fill = "Presence of Resource Officer") +
       theme_minimal()
-  })
-  
-  #school security bar plot
-  output$schoolsecurity_plot <- renderPlot({
-    ggplot(data = shooting_data, aes(x=resource_officer)) +
-      geom_bar(fill = "black", color = "black") +
-      labs(title = "School Security",
-           x = "Presence of Security Officer",
-           y = "Number of Incidents") +
-      theme_minimal()
+    ggplotly(y)
   })
   
   #Access to firearms slideshow
@@ -204,6 +195,31 @@ server <- function(input, output) {
     slickR(imgs)
   
 })
+  
+  #Shooting Type
+  output$shootingtype_plot <- renderPlotly({
+    a <- ggplot(data = shooting_data, aes(x=shooting_type)) +
+      geom_bar(fill = "blue", color = "black") +
+      labs(title = "Shooting Type",
+           x = "Shooting Type",
+           y = "Number of Incidents") +
+      theme_minimal() + coord_flip()
+    ggplotly(a)
+  })
+
+  
+  #Age plot
+  output$age_plot <- renderPlotly({
+    x <- ggplot(data = shooting_data, aes(x=age_shooter1)) +
+      geom_bar(fill = "blue", color = "black") +
+      labs(title = "Age of Shooter",
+           x = "Age",
+           y = "Number of Incidents") +
+      theme_minimal()
+    ggplotly(x)
+  })
+  
+
 }
 
 # Run the application 
