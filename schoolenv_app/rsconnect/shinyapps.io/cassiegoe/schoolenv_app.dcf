@@ -1,0 +1,12 @@
+name: schoolenv_app
+title: schoolenv_app
+username: cassiegoe
+account: cassiegoe
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11669939
+bundleId: 8455327
+url: https://cassiegoe.shinyapps.io/schoolenv_app/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

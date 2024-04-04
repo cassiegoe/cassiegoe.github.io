@@ -35,7 +35,7 @@ APP:
 current sit, line graph, explain graph
 
 ```{=html}
-<iframe height="1000" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/currentsit_app/"> </iframe>
+<iframe height="700" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/currentsit_app/"> </iframe>
 ```
 
 
@@ -47,6 +47,10 @@ main panel: flip cards to show all incidents based on year
 
 ### School Environment 
 graph, elab, solution card
+```{=html}
+<iframe height="1000" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/schoolenv_app/"> </iframe>
+```
+
 
 ### Access to Firearms
 graph, elab, image slideshow, solution card
