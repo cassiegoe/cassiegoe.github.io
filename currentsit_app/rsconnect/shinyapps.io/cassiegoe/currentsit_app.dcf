@@ -1,0 +1,12 @@
+name: currentsit_app
+title: currentsit_app
+username: cassiegoe
+account: cassiegoe
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11669621
+bundleId: 8455219
+url: https://cassiegoe.shinyapps.io/currentsit_app/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
