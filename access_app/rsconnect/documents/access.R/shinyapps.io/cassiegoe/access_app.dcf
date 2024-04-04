@@ -1,0 +1,12 @@
+name: access_app
+title: access_app
+username: cassiegoe
+account: cassiegoe
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11670183
+bundleId: 8455429
+url: https://cassiegoe.shinyapps.io/access_app/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

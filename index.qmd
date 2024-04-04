@@ -26,16 +26,9 @@ Data Set Intro: \<<https://www.kaggle.com/datasets/joebeachcapital/school-shooti
 
 CSV file: \[Download CSV file\](https://www.dropbox.com/scl/fi/tt3qc4dd9zwoqkysua9lh/school-shootings-data.csv?rlkey=nkirxyg4frvkh2kns81bnxvs6&dl=0)
 
-```{=html}
-<iframe height="3000" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/shooting_app/"> </iframe>
-```
-
 ### Current situation 
-APP:
-current sit, line graph, explain graph
-
 ```{=html}
-<iframe height="700" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/currentsit_app/"> </iframe>
+<iframe height="600" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/currentsit_app/"> </iframe>
 ```
 
 ### Information on Incidents (maybe)
@@ -45,16 +38,25 @@ main panel: flip cards to show all incidents based on year
 ### link to factors and solutions
 
 ### School Environment 
-graph, elab, solution card
 ```{=html}
-<iframe height="1000" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/schoolenv_app/"> </iframe>
+<iframe height="600" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/schoolenv_app/"> </iframe>
 ```
 
 ### Personal Motivations
 
 ### Access to Firearms
-graph, elab, image slideshow, solution card
+```{=html}
+<iframe height="600" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/access_app/"> </iframe>
+```
 
 ### Age 
+```{=html}
+<iframe height="600" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/age_app/"> </iframe>
+```
 
 ### Conclusion
+
+
+```{=html}
+<iframe height="3000" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/shooting_app/"> </iframe>
+```
