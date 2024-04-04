@@ -38,7 +38,6 @@ current sit, line graph, explain graph
 <iframe height="700" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/currentsit_app/"> </iframe>
 ```
 
-
 ### Information on Incidents (maybe)
 side bar: drop down menu of different years
 main panel: flip cards to show all incidents based on year
@@ -51,11 +50,10 @@ graph, elab, solution card
 <iframe height="1000" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/schoolenv_app/"> </iframe>
 ```
 
+### Personal Motivations
 
 ### Access to Firearms
 graph, elab, image slideshow, solution card
-
-### 
 
 ### Age 
 
