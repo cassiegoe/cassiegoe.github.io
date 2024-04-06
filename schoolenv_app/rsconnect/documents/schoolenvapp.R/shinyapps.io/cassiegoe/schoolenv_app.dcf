@@ -5,7 +5,7 @@ account: cassiegoe
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11669939
-bundleId: 8455339
+bundleId: 8460995
 url: https://cassiegoe.shinyapps.io/schoolenv_app/
 version: 1
 asMultiple: FALSE

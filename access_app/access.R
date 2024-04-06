@@ -38,7 +38,7 @@ ui <- fluidPage(
              style = "background-color: white; font-family: Arial, sans-serif;", 
              card_header(
                class = "bg-dark text-white",
-               "Swipe to see"
+               "Swipe to view the most common types of weapons used"
              ),
              slickROutput("slickr", width="300px"))
     )),

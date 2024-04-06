@@ -18,11 +18,6 @@ ui <- fluidPage(
     tags$link(rel = "stylesheet", href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
   ),
   
-  #current situation
-  h4(strong("Current Situation")),
-  p(style="text-align: justify; font-size = 25px",
-    "Insert current situation"),
-  br(),
   
   #plot1_overtheyears
   mainPanel(
@@ -31,9 +26,6 @@ ui <- fluidPage(
                      plotlyOutput("shooting_plot")
     )),
     
-    br(),
-    p(style="text-align: justify; font-size = 25px",
-      "Insert elaboration of graph and prevalence")
   
   
 ))
