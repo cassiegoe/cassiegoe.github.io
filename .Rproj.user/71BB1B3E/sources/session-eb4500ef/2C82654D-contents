@@ -19,9 +19,9 @@ h2 {
 ### Data Set Description
 The [data](https://www.kaggle.com/datasets/joebeachcapital/school-shootings?resource=download) utilized in this report was compiled by the Washington Post, comprising incidents of school shootings that have taken place in the United States following the Columbine High Massacre on April 20, 1999. It specifically focuses on shootings that occurred within primary and secondary school premises during regular school hours, excluding incidents at colleges and universities. These information have been collated through the use of news articles, open-source database, reports and information from both schools and police departments. 
 
-### Understanding the Crisis: The State of School Shootings
+## Understanding the Crisis: The State of School Shootings
 ```{=html}
-<iframe height="600" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/currentsit_app/"> </iframe>
+<iframe height="400" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/currentsit_app/"> </iframe>
 ```
 On April 20, 1999, the deadliest high school shooting occurred at that time in the United States, sparking a national debate on gun control. The Columbine High School shooting in Colorado left 15 people dead and 21 wounded. This tragic event served as a catalyst for heightened awareness and scrutiny of gun violence in schools, setting the stage for ongoing efforts to address the issue. Fast forward to the present day, the alarming rise in the number of school shootings in the United States has reached unprecedented levels, underscoring the urgent need for effective strategies to prevent these tragic incidents. In 2022 alone, the nation witnessed a staggering 46 school shootings, marking the highest number of recorded incidents since 1999. This statistic paints a grim picture of the pervasive threat of gun violence in educational settings and its devastating impact on students, teachers, and communities across the country. 
 
@@ -31,7 +31,7 @@ According to the [Centers for Disease Control and Prevention (CDC)](https://www-
 side bar: drop down menu of different years
 main panel: flip cards to show all incidents based on year
 
-### Addressing the Epidemic: Understanding Factors and Solutions
+## Addressing the Epidemic: Factors and Solutions
 As we confront the alarming rise in school shootings, it becomes imperative to understand the factors driving this disturbing trend and to explore effective strategies for prevention. Merely acknowledging the grim reality of these incidents is not enough; we must also delve deeper into the root causes, systemic failures, and societal factors that contribute to the epidemic of school shootings. By examining these factors, we can identify areas for intervention and develop evidence-based solutions to prevent further tragedies. So, what are the factors that have contributed to the rise in school shootings and what more can be done to prevent further occurrences?
 
 
@@ -41,6 +41,9 @@ As we confront the alarming rise in school shootings, it becomes imperative to u
 ```
 
 ### Personal Motivations
+```{=html}
+<iframe height="700" width="100%" frameborder="no" src="https://cassiegoe2.shinyapps.io/personal_app/"> </iframe>
+```
 
 
 ### Access to Firearms
