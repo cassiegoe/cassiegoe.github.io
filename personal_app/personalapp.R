@@ -20,44 +20,60 @@ incident_summary <- shooting_data %>%
 ui <- fluidPage(
   
   tags$head(
-    tags$link(rel = "stylesheet", href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    tags$link(rel = "stylesheet", href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"),
+    tags$script(src = "https://kit.fontawesome.com/<you>.js")
   ),
   
+  #Sidebar Layout
+  fluidRow(
+    column(
+      width = 3,
+      layout_sidebar(
+        sidebar = sidebar(
+          radioButtons("plot", h3("Choose Factor:"), 
+                       c("Type of Shooting", "Shooter's Relationship to School"))
+        ))
+    ),
+    column (
+      width = 9,
+      mainPanel(
+          conditionalPanel(
+            condition = "input.plot == 'Type of Shooting'",
+            plotlyOutput("shootingtype_plot"),
+            p("shooting type text")
+          ),
+          conditionalPanel(
+            condition = "input.plot == 'Shooter\\'s Relationship to School'",
+            plotlyOutput("shooterrelation_plot"),
+            p("shooter relationship text")
+        )
+       )
+      )
+   
+    ),
+
   
   #section for personal motivations  
   br(),
-  h4(strong("Personal Motivations (2 variables)")),
-  
   fluidRow(
-    column(6, 
-           plotlyOutput("shootingtype_plot")),
-    column(6, 
-           p(style="text-align: justify; font-size = 20px",
-             "Insert elab"))
-  ),
-  
-  fluidRow(
-    column(10,
-           plotlyOutput("shooterrelation_plot")),
-    column(2, align = "left",
-           p(style="text-align: justify; font-size = 20px",
-             "Insert elab"))
-  ),
-  
-  br(),
-  card(
-    style = "background-color: white; font-family: Arial, sans-serif;", 
-    card_header(
-      class = "bg-dark text-white",
-      "What can be done?"
+    column(
+      width = 6,
+      strong("Connecting the dots"),
+      p("snjeifiknnvsnjeifiknnvsnjeifiknnvsnjeifiknnv")
     ),
-    markdown(
-      "Insert Solution")
-  ),
-  
-
-  
-  
+    column(
+      width = 6,
+      card(
+        style = "background-color: white; font-family: Arial, sans-serif;", 
+        card_header(
+          class = "bg-dark text-white",
+          "What can be done?"
+        ),
+        markdown(
+          "Insert Solution")
+      )
+     )
+   )
 )
 
 
@@ -67,7 +83,7 @@ server <- function(input, output) {
   
   #Shooting Type
   output$shootingtype_plot <- renderPlotly({
-    a <- ggplot(data = shooting_data, aes(x=shooting_type)) +
+    a <- ggplot(data = shooting_data, aes(x=shooting_type_edited)) +
       geom_bar(fill = "blue", color = "black") +
       labs(title = "Shooting Type",
            x = "Shooting Type",
@@ -86,6 +102,7 @@ server <- function(input, output) {
       theme_minimal() + coord_flip()
     ggplotly(b)
   })
+  
 
   
   
