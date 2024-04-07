@@ -25,9 +25,9 @@ ui <- fluidPage(
   
   #Section for access to firearms
   br(),
-  h4(strong("Access to Firearms")),
-  p(style="text-align: justify; font-size = 20px",
-    "Insert plot"),
+  plotlyOutput("weaponsource_plot"),
+  br(),
+  br(),
   
   fluidRow(
     column(6, 
@@ -68,6 +68,16 @@ server <- function(input, output) {
     
   })
   
+  #Weapon Source plot
+  output$weaponsource_plot <- renderPlotly({
+    b <- ggplot(data = shooting_data[!is.na(shooting_data$Weapon_source_edited), ], aes(x = Weapon_source_edited)) +
+      geom_bar(fill = "purple", color = "black") +
+      labs(title ="Sources of Shooters' Weapons",
+           x = "Weapon Sources",
+           y = " Number of Incidents") +
+      theme_minimal() + coord_flip()
+    ggplotly(b)
+  })
 
   
   

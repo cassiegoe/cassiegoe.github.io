@@ -49,7 +49,7 @@ As we confront the alarming rise in school shootings, it becomes imperative to u
 
 ### Access to Firearms
 ```{=html}
-<iframe height="700" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/access_app/"> </iframe>
+<iframe height="1000" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/access_app/"> </iframe>
 ```
 
 ### Age 
