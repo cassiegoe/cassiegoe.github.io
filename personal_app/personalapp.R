@@ -25,33 +25,27 @@ ui <- fluidPage(
   ),
   
   #Sidebar Layout
-  fluidRow(
-    column(
-      width = 3,
-      layout_sidebar(
-        sidebar = sidebar(
-          radioButtons("plot", h3("Choose Factor:"), 
-                       c("Type of Shooting", "Shooter's Relationship to School"))
-        ))
-    ),
-    column (
-      width = 9,
-      mainPanel(
-          conditionalPanel(
-            condition = "input.plot == 'Type of Shooting'",
-            plotlyOutput("shootingtype_plot"),
-            p("shooting type text")
-          ),
-          conditionalPanel(
-            condition = "input.plot == 'Shooter\\'s Relationship to School'",
-            plotlyOutput("shooterrelation_plot"),
-            p("shooter relationship text")
-        )
-       )
-      )
-   
-    ),
+   sidebarLayout(
+    sidebarPanel(
+      radioButtons("plot", h3("Choose Factor:"), 
+                   c("Type of Shooting", "Shooter's Relationship to School"))),
 
+      mainPanel(
+        conditionalPanel(
+          condition = "input.plot == 'Type of Shooting'",
+          plotlyOutput("shootingtype_plot", width = "100%"),
+          p("shooting type text")
+        ),
+        conditionalPanel(
+          condition = "input.plot == 'Shooter\\'s Relationship to School'",
+          plotlyOutput("shooterrelation_plot", width = "100%"),
+          p("shooter relationship text")
+          
+        )
+      )
+   ),
+  
+  
   
   #section for personal motivations  
   br(),
@@ -75,6 +69,9 @@ ui <- fluidPage(
      )
    )
 )
+
+
+
 
 
 # Define server logic required to draw 

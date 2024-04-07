@@ -4,6 +4,8 @@ library(dplyr)
 library(plotly)
 library(bslib)
 library(slickR)
+library(timevis)
+
 
 shooting_data <- read.csv("school-shootings-data-currentsit.csv")
 df <- data.frame(shooting_data)
@@ -23,9 +25,8 @@ ui <- fluidPage(
     width = 12,
     fluidRow( column(8, align="center",
                      plotlyOutput("shooting_plot")
-    )),
+    ))
     
-  
   
 ))
 
@@ -44,6 +45,7 @@ server <- function(input, output) {
       theme_minimal()
     ggplotly(p)
   })
+  
   
 }
 
