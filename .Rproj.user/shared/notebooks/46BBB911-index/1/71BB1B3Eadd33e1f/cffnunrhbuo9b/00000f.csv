@@ -1,0 +1,5 @@
+"0","library(magick)"
+"0","image_read_gif('gun violence peace.gif')"
+"2","Error in image_read_gif(""gun violence peace.gif"") : 
+  could not find function ""image_read_gif""
+"

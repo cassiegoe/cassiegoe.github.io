@@ -1,0 +1,282 @@
+shiny::runApp('shooting_app')
+install.packages('rsconnect')
+install.packages("rsconnect")
+rsconnect::setAccountInfo(name='cassiegoe',
+token='78F565B3A65AEC1C88B6B6197D3DB43C',
+secret='KKaPKqbLwiqVe8UiDlJ9Nuk1+2xk18pylL0J+DOG')
+install.packages("magick")
+library(magick)
+knitr::include_graphics("gun violence peace.gif")
+knitr::include_graphics("gun violence peace.gif")
+cat('
+<style>
+.overlay-container {
+position: relative;
+width: 800px; /* Width of your graphic */
+height: 350px; /* Height of your graphic */
+}
+.title-overlay {
+position: absolute;
+top: 50%; /* Adjust as needed */
+left: 50%; /* Adjust as needed */
+transform: translate(-50%, -50%);
+text-align: center;
+color: white; /* Adjust text color as needed */
+font-size: 24px; /* Adjust font size as needed */
+}
+</style>
+<div class="overlay-container">')
+knitr::include_graphics("gun violence peace.gif")
+cat('<div class="title-overlay">How Can We Prevent Gun Violence in Schools?</div>
+</div>')
+title_image <- knitr::include_graphics("gun violence peace.gif")
+knitr::include_graphics("gun violence peace.gif")
+<iframe src="https://giphy.com/embed/KfQ0P8fBJZEBVPSom4" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/unitednations-peace-KfQ0P8fBJZEBVPSom4">via GIPHY</a></p>
+library(magick)
+image_url <- ('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3ZhczFwdHN5djUydTZlNGN3eGl6d2tjbnBuczJtaDU5M3JxaXduMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KfQ0P8fBJZEBVPSom4/giphy.gif')
+library(magick)
+image_read_gif('gun violence peace.gif')
+library(magick)
+read.gif('gun violence peace.gif', frame=0, flip=FALSE, verbose=FALSE)
+cat('<img src="gun_violence_peace.gif" width="800" height="350">')
+read.gif('gun violence peace.gif', frame=0, flip=FALSE, verbose=FALSE)
+runExample("01_hello")
+install.packages("shiny")
+library(shiny)
+runExample("01_hello")
+runExample("09_upload")
+runExample("08_html")
+runExample("04_mpgl")
+runExample("04_mpg")
+install.packages("shiny")
+install.packages("shiny")
+knitr::opts_chunk$set(echo = TRUE)
+runExample("04_mpg")
+library(shiny)
+runExample("04_mpg")
+library(shiny)
+runExample("01_hello")
+library(shiny)
+runExample("08_mpg")
+library(shiny)
+runExample("08_mpg")
+library(shiny)
+runExample("04_mpg")
+runApp('shooting_app')
+runApp('shooting_app')
+runApp('shooting_app')
+runApp('shooting_app')
+runApp('shooting_app')
+runApp('shooting_app')
+runApp('shooting_app')
+runApp('shooting_app')
+runApp('shooting_app')
+runApp('shooting_app')
+runApp('shooting_app')
+library(shiny)
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+install.packages("bslib")
+install.packages("bslib")
+library(bslib)
+shiny::runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+shiny::runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+install.packages("shinythemes")
+install.packages("shinythemes")
+install.packages("shinyWidgets")
+shiny::runApp()
+runApp()
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(palmerpenguins)
+glimpse(penguins)
+ggplot(data = penguins,
+mapping = aes(x = bill_depth_mm,
+y = bill_length_mm,
+color = species,
+shape = island,
+size = body_mass_g,
+alpha = flipper_length_mm)) +
+geom_point( size = 2, alpha = 0.5) +
+labs(title ="Bill depth and length",
+subtitle = "Dimensions for Adelle, Chinstrap, and Gentoo Penguins",
+x = "Bill depth (mm)", y = "Bill length (mm)",
+color = "species",
+caption = "Sources: Palmer Station LTER/ palmerpenguins package") +
+scale_colour_viridis_d()
+ggplot(penguins,
+aes ( x = bill_length_mm,
+y = bill_depth_mm,
+size = body_mass_g,
+color = species)) +
+geom_point(alpha = 0.5) +
+scale_size(range = c(1, 8), name = "Body mass (g)") +
+scale_color_viridis_d() +
+labs ( x = "Bill length (mm)", y = "Bill depth (mm)")
+ggplot(penguins,
+aes(x = bill_depth_mm,
+y = bill_length_mm)) +
+geom_point() +
+facet_grid(species ~ island)
+library(palmerpenguins)
+ggplot(penguins,
+aes(x = bill_depth_mm,
+y = bill_length_mm)) +
+geom_point() +
+facet_grid(species ~ sex)
+library(palmerpenguins)
+ggplot(penguins,
+aes(x = bill_depth_mm,
+y = bill_length_mm,
+color =species)) +
+geom_point() +
+facet_grid(sex ~ species) +
+scale_color_viridis_d() +
+guides(color = "none")
+library(palmerpenguins)
+ggplot(penguins,
+aes(x = bill_depth_mm,
+y = bill_length_mm)) +
+geom_point() +
+facet_wrap( ~ species)
+library(palmerpenguins)
+ggplot(penguins,
+aes(x = bill_depth_mm,
+y = bill_length_mm)) +
+geom_point() +
+facet_wrap(~species, ncol = 2)
+library(palmerpenguins)
+ggplot(penguins,
+aes(x = bill_depth_mm,
+y = bill_length_mm)) +
+geom_point() +
+facet_grid(. ~ species)
+ggplot(penguins,
+aes(x = bill_depth_mm,
+y = bill_length_mm)) +
+geom_point() +
+geom_smooth(method = lm, color ="red", fill="#69b3a2", se = TRUE)
+library(openintro)
+loans <- loans_full_schema %>%
+select(loan_amount, interest_rate, term, grade, state, annual_income, homeownership, debt_to_income)
+glimpse(loans)
+ggplot(loans) + aes(x=loan_amount, fill = homeownership) +geom_histogram(binwidth = 5000, alpha = 0.5) +
+labs(x = "loan amount($)", y = "Frequency", title = "Amounts of Lending Club Loans") +
+facet_wrap(~ homeownership, nrow =3)
+ggplot(loans, aes(x = loan_amount, fill=homeownership)) +
+geom_density(adjust = 0.5, alpha = 0.5) +
+labs(x ="Loan amount ($)", y = "Density", title ="Amounts of Lending Club Loans")
+ggplot(loans, aes(x = interest_rate,
+y= grade)) +
+geom_boxplot() +
+labs(x = "Interest rate (%)", y = "Grade", title = " Interest rates of Lending Club loans")
+ggplot(loans %>% filter(debt_to_income < 100), aes(x = debt_to_income, y =interest_rate)) +
+geom_hex()
+ggplot(loans, aes(x = homeownership,
+fill = grade)) +
+geom_bar(position = "fill")
+ggplot(loans, aes(x = homeownership, y= loan_amount)) +
+geom_violin()
+library(ggridges)
+ggplot(loans, aes(x = loan_amount, y = grade, fill = grade, color = grade)) +
+geom_density_ridges(alpha = 0.5)
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(hrbrthemes)
+data <- read.table("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered.csv", header=T)
+data$date <- as.Date(data$date)
+p <- ggplot(data, aes(x = date,
+y = value)) +
+geom_area(fill = "#69b3a2", alpha = 0.5) +
+geom_line(color = "#69b3a2") +
+labs(y = "bitcoin price($)")
+p <- ggplotly(p)
+p
+p <- ggplot(loans, aes(x = loan_amount, fill=homeownership)) +
+geom_density(adjust = 0.5, alpha = 0.5) +
+labs(x ="Loan amount ($)", y = "Density", title ="Amounts of Lending Club Loans")
+p <- ggplotly(p)
+p
+library(ggplot2)
+library(dplyr)
+#dummydata (0:364 -> generate sequence of consecutive days)
+data <- data.frame(
+day = as.Date("2023-01-01") - 0:364,
+value = runif(365) - seq(-140, 224)^2 / 10000
+)
+ggplot(data, aes(x=day, y=value)) +
+geom_line( color="#69b3a2") +
+xlab("")
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+install.packages("flipCards")
+runApp()
+install.packages("flipCards")
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+library(lorem)
+library(lorem)
+runApp()
+runApp()
+shiny::runApp()
+runApp()
+install.packages("slickR")
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+shiny::runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+shiny::runApp()
+runApp()
+runApp()
+runApp()

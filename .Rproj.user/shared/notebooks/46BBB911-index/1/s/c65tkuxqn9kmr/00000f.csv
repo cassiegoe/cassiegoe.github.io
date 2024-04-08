@@ -1,0 +1,9 @@
+"0","library(magick)"
+"2","Warning: package ‘magick’ was built under R version 4.3.3"
+"2","Linking to ImageMagick 6.9.12.98
+Enabled features: cairo, freetype, fftw, ghostscript, heic, lcms, pango, raw, rsvg, webp
+Disabled features: fontconfig, x11
+"
+"0","img <- image_read(""gun-violence-image"")"
+"2","Error: rsession-utf8.exe: UnableToOpenBlob `C:\Users\cassi\OneDrive - National University of Singapore\Documents\AY2S2\NM2207\cassiegoe.github.io\gun-violence-image': No such file or directory @ error/blob.c/OpenBlob/2964
+"

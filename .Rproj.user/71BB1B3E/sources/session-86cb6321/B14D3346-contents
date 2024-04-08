@@ -1,0 +1,45 @@
+library(shiny)
+library(tidyverse)
+library(dplyr)
+library(plotly)
+
+shooting_data <- read.csv("school-shootings-data.csv")
+df <- data.frame(shooting_data)
+
+shooting_data <- shooting_data %>%
+  group_by(year) %>%
+  mutate(Incidents = n())
+
+# Define UI for application that draws a histogram
+ui <- fluidPage(
+  titlePanel("How Can We Prevent Gun Violence in Schools?"),
+  sidebarLayout(
+    sidebarPanel(sliderInput("samplesize","Sample Size:",min = 100,max = 10000,value = 1000)),
+    mainPanel(plotOutput("distPlot"),
+              plotlyOutput("shooting_plot"))
+  )
+)
+
+# Define server logic required to draw a histogram
+server <- function(input, output) {
+  output$distPlot <- renderPlot({
+    hist(rnorm(input$samplesize),col='darkorchid',xlab="Sample",main="Standard Normally Distributed Sample")},
+    height=300
+  )
+  
+  #School Shootings Over the Years
+  output$shooting_plot <- renderPlotly({
+    p <- ggplot(data = shooting_data, aes(x = year, y = Incidents)) +
+      geom_line(color = "black") +
+      geom_point(color = "black", size = 1) +
+      labs(x = "Year",
+           y = "Number of Incidents",
+           title = "School Shootings Over the Years") +
+      theme_minimal()
+    ggplotly(p)
+  })
+  
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)

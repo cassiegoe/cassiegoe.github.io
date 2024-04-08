@@ -1,0 +1,11 @@
+"0","library(magick)"
+"0","img <- image_read(""gun-violence-image.jpg"")"
+"0","img_scaled <- image_scale(img, ""200x200"")"
+"0",""
+"0","img2 <- image_read(""gun-violence-image2.jpg"")"
+"0","img2_scaled <- image_scale(img2, ""200x200"")"
+"0",""
+"0","animation <- image_animate(img_scaled, fps = 0.1, dispose = ""previous"")"
+"2","Error in image_animate(img_scaled, fps = 0.1, dispose = ""previous"") : 
+  argument 'fps' must be a factor of 100
+"

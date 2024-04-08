@@ -1,0 +1,16 @@
+"0","library(shiny)"
+"2","Warning: package ‘shiny’ was built under R version 4.3.3"
+"0","runExample(""04_mpg"")"
+"2","Warning: package ‘bslib’ was built under R version 4.3.3"
+"2","
+Attaching package: ‘bslib’
+
+"
+"2","The following object is masked from ‘package:utils’:
+
+    page
+
+"
+"2","
+Listening on http://127.0.0.1:6093
+"
