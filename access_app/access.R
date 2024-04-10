@@ -38,9 +38,9 @@ ui <- fluidPage(
              style = "background-color: white; font-family: Arial, sans-serif;", 
              card_header(
                class = "bg-dark text-white",
-               "View firearms used in deadliest school shootings:"
+               "View Firearms Used in Deadliest School Shootings:"
              ),
-             slickROutput("slickr", width="300px"))
+             slickROutput("slickr", width="400px"))
     )),
   
   br(),
@@ -71,7 +71,7 @@ server <- function(input, output) {
   #Weapon Source plot
   output$weaponsource_plot <- renderPlotly({
     b <- ggplot(data = shooting_data[!is.na(shooting_data$Weapon_source_edited), ], aes(x = Weapon_source_edited)) +
-      geom_bar(fill = "purple", color = "black") +
+      geom_bar(fill = "#dee2d0") +
       labs(title ="Sources of Shooters' Weapons",
            x = "Weapon Sources",
            y = " Number of Incidents") +
@@ -82,8 +82,6 @@ server <- function(input, output) {
   
   
 
-  
-  
 }
 
 # Run the application 

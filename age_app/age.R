@@ -25,7 +25,6 @@ ui <- fluidPage(
   
   #section for indiv characteristics
   br(),
-  h4(strong("Age")),
   
   fluidRow(
     column(6, 
@@ -45,7 +44,7 @@ server <- function(input, output) {
   #Age plot
   output$age_plot <- renderPlotly({
     x <- ggplot(data = shooting_data, aes(x=age_shooter1)) +
-      geom_bar(fill = "blue", color = "black") +
+      geom_bar(fill = "#af4444",color = "#dee2d0", width = 1) +
       labs(title = "Age of Shooter",
            x = "Age",
            y = "Number of Incidents") +

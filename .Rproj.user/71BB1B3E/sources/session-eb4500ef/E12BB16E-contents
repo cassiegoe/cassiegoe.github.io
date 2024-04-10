@@ -81,7 +81,7 @@ server <- function(input, output) {
   #Shooting Type
   output$shootingtype_plot <- renderPlotly({
     a <- ggplot(data = shooting_data, aes(x=shooting_type_edited)) +
-      geom_bar(fill = "blue", color = "black") +
+      geom_bar(fill = "#9d735d") +
       labs(title = "Shooting Type",
            x = "Shooting Type",
            y = "Number of Incidents") +
@@ -92,7 +92,7 @@ server <- function(input, output) {
   #Shooter Relationship
   output$shooterrelation_plot <- renderPlotly({
     b <- ggplot(data = shooting_data[!is.na(shooting_data$shooter_relationship_edited), ], aes(x = shooter_relationship_edited)) +
-      geom_bar(fill = "orange", color = "black") +
+      geom_bar(fill = "#c3cba8") +
       labs(title ="Shooter Relationship with School",
            x = "Shooter Relationship",
            y = " Number of Incidents") +

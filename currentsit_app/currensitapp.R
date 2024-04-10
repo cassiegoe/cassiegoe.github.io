@@ -5,9 +5,12 @@ library(plotly)
 library(bslib)
 library(slickR)
 library(timevis)
-
+library(lubridate)
+library(stringr)
 
 shooting_data <- read.csv("school-shootings-data-currentsit.csv")
+
+
 df <- data.frame(shooting_data)
 
 shooting_data <- shooting_data %>%
@@ -15,7 +18,6 @@ shooting_data <- shooting_data %>%
   mutate(Incidents = n())
 
 ui <- fluidPage(
-  
   tags$head(
     tags$link(rel = "stylesheet", href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
   ),
@@ -23,14 +25,14 @@ ui <- fluidPage(
   #plot1_overtheyears
   mainPanel(
     width = 12,
-    fluidRow( column(8, align="center",
-                     plotlyOutput("shooting_plot")
+    fluidRow(
+      column(
+        8, align = "center",
+        plotlyOutput("shooting_plot")
+      )
     ))
-    
+)
   
-))
-
-
 # Define server logic required to draw 
 server <- function(input, output) {
   
@@ -46,7 +48,7 @@ server <- function(input, output) {
     ggplotly(p)
   })
   
-  
+
 }
 
 # Run the application 

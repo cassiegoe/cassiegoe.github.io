@@ -1,0 +1,12 @@
+name: choropleth_app
+title: choropleth_app
+username: cassiegoe2
+account: cassiegoe2
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11721503
+bundleId: 8477418
+url: https://cassiegoe2.shinyapps.io/choropleth_app/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,388 @@
+uid,school_name,city,region,State,year
+1,Columbine High School,Littleton,colorado,Colorado,1999
+2,Scotlandville Middle School,Baton Rouge,louisiana,Louisiana,1999
+3,Heritage High School,Conyers,georgia,Georgia,1999
+4,John Bartram High School,Philadelphia,pennsylvania,Pennsylvania,1999
+5,Dorchester High School,Boston,massachusetts,Massachusetts,1999
+6,Deming Middle School,Deming,new mexico,New Mexico,1999
+7,Fort Gibson Middle School,Fort Gibson,oklahoma,Oklahoma,1999
+8,Ridgewood High School,New Port Richey,florida,Florida,2000
+9,Alicia Reyes Elementary School,Merced,california,California,2000
+10,Duke Ellington Elementary School,Chicago,illinois,Illinois,2000
+11,Horn Lake High School,Horn Lake,mississippi,Mississippi,2000
+12,Tecumseh High School,Tecumseh,oklahoma,Oklahoma,2000
+13,Buell Elementary School,Mount Morris Township,michigan,Michigan,2000
+14,Hugo High School,Hugo,oklahoma,Oklahoma,2000
+15,Carmichael Elementary School,Sierra Vista,arizona,Arizona,2000
+16,Lake Worth Middle School,Lake Worth,florida,Florida,2000
+17,Dimmitt Middle School,Renton,washington,Washington,2000
+18,Mount Healthy North Junior High,Mount Healthy,ohio,Ohio,2000
+19,Carter G. Woodson Middle School,New Orleans,louisiana,Louisiana,2000
+20,Hueneme High School,Oxnard,california,California,2001
+21,Lake Clifton Eastern High School,Baltimore,maryland,Maryland,2001
+22,Pearl C. Anderson Middle School,Dallas,texas,Texas,2001
+23,Santana High School,Santee,california,California,2001
+24,Bishop Neumann Junior-Senior High,Williamsport,pennsylvania,Pennsylvania,2001
+25,Granite Hills High School,El Cajon,california,California,2001
+26,Lew Wallace High School,Gary,indiana,Indiana,2001
+27,Monroe City Alternative Center,Monroe,louisiana,Louisiana,2001
+28,Ennis High School,Ennis,texas,Texas,2001
+29,Belmont High School,Los Angeles,california,California,2001
+30,Latonia Elementary School,Covington,kentucky,Kentucky,2001
+31,Redondo Union High School,Redondo Beach,california,California,2001
+32,Caro Learning Center,Caro,michigan,Michigan,2001
+33,"Martin Luther King, Jr. High School",New York City,new york,New York,2002
+34,Gardena High School,Los Angeles,california,California,2002
+35,Benjamin Tasker Middle School,Bowie,maryland,Maryland,2002
+36,Lincoln High School,Jersey City,new jersey,New Jersey,2002
+37,St. James Catholic School,Liberty,missouri,Missouri,2002
+38,Mount Pleasant High School,Providence,rhode island,Rhode Island,2003
+39,Ranum High School,Westminster,colorado,Colorado,2003
+40,Cardozo High School,Washington,district of columbia,District of Columbia,2003
+41,John McDonogh High School,New Orleans,louisiana,Louisiana,2003
+42,Delhi Middle School,Delhi,california,California,2003
+43,Red Lion Area Junior High School,Red Lion,pennsylvania,Pennsylvania,2003
+44,Vicksburg High School,Vicksburg,mississippi,Mississippi,2003
+45,Lewis and Clark High School,Spokane,washington,Washington,2003
+46,Rocori High School,Cold Spring,minnesota,Minnesota,2003
+47,Burns Middle School,Lawndale,north carolina,North Carolina,2003
+48,Rio Cazadero High School,Sacramento,california,California,2003
+217,East Mecklenburg High School,Charlotte,north carolina,North Carolina,2003
+49,Ballou High School,Washington,district of columbia,District of Columbia,2004
+50,Columbia High School,East Greenbush,new york,New York,2004
+51,T.M. Peirce Elementary School,Philadelphia,pennsylvania,Pennsylvania,2004
+52,Castlemont High School,Oakland,california,California,2004
+53,Proviso East High School,Maywood,illinois,Illinois,2004
+54,Wirt High School,Gary,indiana,Indiana,2004
+55,Thurgood Marshall High School,Baltimore,maryland,Maryland,2004
+56,Booker T. Washington High School,New Orleans,louisiana,Louisiana,2004
+57,Emmanuel Christian Academy,Jackson,mississippi,Mississippi,2004
+58,Woodruff High School,Peoria,illinois,Illinois,2005
+59,Bowen High School,Chicago,illinois,Illinois,2005
+60,Maplewood Comprehensive High School,Nashville,tennessee,Tennessee,2005
+61,Red Lake High School,Red Lake,minnesota,Minnesota,2005
+62,Canton High School,Canton,texas,Texas,2005
+63,Highland Elementary School,Lower Allen Township,pennsylvania,Pennsylvania,2005
+64,Maury Middle School,Jacksboro,tennessee,Tennessee,2005
+65,Sojourner Truth High School,Jacksonville,florida,Florida,2005
+66,Harlan Community Academy High School,Chicago,illinois,Illinois,2005
+67,Farmington High School,Farmington,missouri,Missouri,2005
+68,Saginaw High School,Saginaw,michigan,Michigan,2005
+69,Campbell County High School,Jacksboro,tennessee,Tennessee,2005
+70,Central High School,Detroit,michigan,Michigan,2005
+71,Mary McLeod Bethune Academy,Milwaukee,wisconsin,Wisconsin,2006
+72,Milwee Middle School,Longwood,florida,Florida,2006
+73,Indian River High School,Chesapeake,virginia,Virginia,2006
+74,Will C. Wood High School,Vacaville,california,California,2006
+75,Lakeview Centennial High School,Garland,texas,Texas,2006
+76,Westinghouse High School,Pittsburgh,pennsylvania,Pennsylvania,2006
+77,Roseburg High School,Roseburg,oregon,Oregon,2006
+78,Pine Middle School,Reno,nevada,Nevada,2006
+79,Venice High School,Los Angeles,california,California,2006
+80,Orange High School,Hillsborough,north carolina,North Carolina,2006
+81,South Hills High School,Fort Worth,texas,Texas,2006
+82,Platte Canyon High School,Bailey,colorado,Colorado,2006
+83,Weston High School,Cazenovia,wisconsin,Wisconsin,2006
+84,West Nickel Mines Amish School,Nickel Mines,pennsylvania,Pennsylvania,2006
+85,Memorial Middle School,Joplin,missouri,Missouri,2006
+86,Henry Foss High School,Tacoma,washington,Washington,2007
+87,Robert A. Taft Information Technology High School,Cincinnati,ohio,Ohio,2007
+88,William L.Sayre High School,Philadelphia,pennsylvania,Pennsylvania,2007
+89,Herbert Henry Dow High School,Midland,michigan,Michigan,2007
+90,Chicago Vocational Career Academy,Chicago,illinois,Illinois,2007
+91,Springwater Trail High School,Gresham,oregon,Oregon,2007
+92,Liberty Memorial Middle School,Los Fresnos,texas,Texas,2007
+93,George S. Middleton High School,Tampa,florida,Florida,2007
+94,SuccessTech Academy,Cleveland,ohio,Ohio,2007
+95,Groves High School,Garden City,georgia,Georgia,2007
+96,Crossroads Charter High School,Charlotte,north carolina,North Carolina,2008
+97,Hamilton High School,Memphis,tennessee,Tennessee,2008
+98,Notre Dame Elementary School,Portsmouth,ohio,Ohio,2008
+99,Mitchell High School,Memphis,tennessee,Tennessee,2008
+100,E.O. Green Junior High School,Oxnard,california,California,2008
+101,Friends of Children Head Start center,Carthage,mississippi,Mississippi,2008
+102,Roosevelt High School,Fresno,california,California,2008
+103,Central High School,Knoxville,tennessee,Tennessee,2008
+104,Dillard High School,Fort Lauderdale,florida,Florida,2008
+105,Central High School,Detroit,michigan,Michigan,2009
+106,John Muir Elementary School,Hayward,california,California,2009
+107,Ribault High School,Jacksonville,florida,Florida,2009
+108,Larose-Cut Off Middle School,Larose,louisiana,Louisiana,2009
+109,Stamford Academy,Stamford,connecticut,Connecticut,2009
+110,Virginia Randolph Community High School,Glen Allen,virginia,Virginia,2009
+111,Mattituck Junior-Senior High School,Mattituck,new york,New York,2009
+112,Carolina Forest High School,Conway,south carolina,South Carolina,2009
+113,Booker T. Washington High School,Shreveport,louisiana,Louisiana,2009
+114,Discovery Middle School,Madison,alabama,Alabama,2010
+115,Deer Creek Middle School,Littleton,colorado,Colorado,2010
+116,Woodrow Wilson High School,Portsmouth,virginia,Virginia,2010
+117,South Gate High School,South Gate,california,California,2010
+118,Sullivan Central High School,Blountville,tennessee,Tennessee,2010
+119,Socastee High School,Conway,south carolina,South Carolina,2010
+120,Alisal High School,Salinas,california,California,2010
+121,Kelly Elementary School,Carlsbad,california,California,2010
+122,Marinette High School,Marinette,wisconsin,Wisconsin,2010
+123,Millard South High School,Omaha,nebraska,Nebraska,2011
+124,Gardena High School,Los Angeles,california,California,2011
+125,Louisiana Schnell Elementary School,Placerville,california,California,2011
+126,Martinsville West Middle,Martinsville,indiana,Indiana,2011
+127,Sheeler Charter High School,Apopka,florida,Florida,2011
+128,Ross Elementary School,Houston,texas,Texas,2011
+129,Cape Fear High School,Fayetteville,north carolina,North Carolina,2011
+130,Cummings Middle School,Brownsville,texas,Texas,2012
+131,North Forest High School,Houston,texas,Texas,2012
+132,Walpole Elementary School,Walpole,new hampshire,New Hampshire,2012
+133,Armin Jahr Elementary School,Bremerton,washington,Washington,2012
+134,Chardon High School,Chardon,ohio,Ohio,2012
+135,Episcopal School of Jacksonville,Jacksonville,florida,Florida,2012
+136,LeFlore High School,Mobile,alabama,Alabama,2012
+137,Mary Scroggs Elementary School,Chapel Hill,north carolina,North Carolina,2012
+138,Perry Hall High School,Baltimore,maryland,Maryland,2012
+139,Normal Community High School,Normal,illinois,Illinois,2012
+140,Sandy Hook Elementary School,Newtown,connecticut,Connecticut,2012
+141,Apostolic Revival Center and Christian School,Fort Myers,florida,Florida,2013
+142,Taft Union High School,Taft,california,California,2013
+143,Price Middle School,Atlanta,georgia,Georgia,2013
+144,La Salle High School,Cincinnati,ohio,Ohio,2013
+145,Redland Middle School,Homestead,florida,Florida,2013
+146,Ronald E. McNair Discovery Learning Academy,Decatur,georgia,Georgia,2013
+147,Carver High School,Winston-Salem,north carolina,North Carolina,2013
+148,Agape Christian Academy,Pine Hills,florida,Florida,2013
+149,Lanier High School,Austin,texas,Texas,2013
+150,Sparks Middle School,Sparks,nevada,Nevada,2013
+151,Newman Elementary School,Chino,california,California,2013
+152,West Orange High School,Winter Garden,florida,Florida,2013
+153,Arapahoe High School,Centennial,colorado,Colorado,2013
+154,Liberty Technology Magnet High School,Jackson,tennessee,Tennessee,2014
+155,Berrendo Middle School,Roswell,new mexico,New Mexico,2014
+156,King Elementary School,Lancaster,pennsylvania,Pennsylvania,2014
+157,Delaware Valley Charter School,Philadelphia,pennsylvania,Pennsylvania,2014
+158,Rebound High School,Carbondale,illinois,Illinois,2014
+159,President Theodore Roosevelt High,Honolulu,hawaii,Hawaii,2014
+160,Bend High School,Bend,oregon,Oregon,2014
+161,Salisbury High School,Salisbury,north carolina,North Carolina,2014
+162,Success Academy,Raytown,missouri,Missouri,2014
+163,Benjamin Banneker High School,College Park,georgia,Georgia,2014
+164,D. H. Conley High School,Greenville,north carolina,North Carolina,2014
+165,Reynolds High School,Troutdale,oregon,Oregon,2014
+166,Stellar Leadership Academy,Miami,florida,Florida,2014
+167,Fern Creek High School,Louisville,kentucky,Kentucky,2014
+168,Albemarle High School,Albemarle,north carolina,North Carolina,2014
+169,Marysville Pilchuck High School,Marysville,washington,Washington,2014
+170,Hand in Hand Montessori,Roseville,minnesota,Minnesota,2015
+171,North Thurston High School,Lacey,washington,Washington,2015
+172,W.S. Hornsby Elementary School,Augusta,georgia,Georgia,2015
+173,Harrisburg High School,Harrisburg,south dakota,South Dakota,2015
+174,Karen Wagner High School,San Antonio,texas,Texas,2015
+175,Vereen School,Moultrie,georgia,Georgia,2015
+176,Lecanto High School,Lecanto,florida,Florida,2015
+177,Harmony Grove High School,Camden,arkansas,Arkansas,2016
+178,Benjamin Franklin High School,Philadelphia,pennsylvania,Pennsylvania,2016
+179,Independence High School,Glendale,arizona,Arizona,2016
+180,Madison High School,Middletown,ohio,Ohio,2016
+181,Huffman High School,Birmingham,alabama,Alabama,2016
+182,Alpine High School,Alpine,texas,Texas,2016
+183,Townville Elementary School,Townville,south carolina,South Carolina,2016
+184,CF Vigor High School,Prichard,alabama,Alabama,2016
+185,Linden-McKinley STEM Academy,Columbus,ohio,Ohio,2016
+186,June Jordan High School for Equity,San Francisco,california,California,2016
+187,Union Middle School,Sandy,utah,Utah,2016
+188,Bay City Western High School,Auburn,michigan,Michigan,2016
+189,Mueller Park Jr. High,Bountiful,utah,Utah,2016
+190,West Liberty-Salem Middle/High School,West Liberty,ohio,Ohio,2017
+191,Scotlandville Magnet High School,Baton Rouge,louisiana,Louisiana,2017
+238,Robert E. Lee High School,Montgomery,alabama,Alabama,2017
+192,North Park Elementary School,San Bernardino,california,California,2017
+193,Moss Bluff Elementary School,Lake Charles,louisiana,Louisiana,2017
+194,Greensboro High School,Greensboro,alabama,Alabama,2017
+195,Warren Elementary School,Chicago,illinois,Illinois,2017
+196,Columbus Scioto 6-12,Columbus,ohio,Ohio,2017
+197,Freeman High School,Rockford,washington,Washington,2017
+198,Mattoon High School,Mattoon,illinois,Illinois,2017
+199,Pattengill Academy,Lansing,michigan,Michigan,2017
+200,Benjamin Banneker High School,College Park,georgia,Georgia,2017
+201,Rancho Tehama Elementary School,Corning,california,California,2017
+202,Aztec High School,Aztec,new mexico,New Mexico,2017
+203,High Point Central High School,High Point,north carolina,North Carolina,2017
+205,The NET Charter High School,New Orleans,louisiana,Louisiana,2018
+204,Italy High School,Italy,texas,Texas,2018
+206,Marshall County High School,Benton,kentucky,Kentucky,2018
+207,Murphy High School,Mobile,alabama,Alabama,2018
+208,Salvador B. Castro Middle School,Los Angeles,california,California,2018
+209,Marjory Stoneman Douglas High School,Parkland,florida,Florida,2018
+210,Dalton High School,Dalton,georgia,Georgia,2018
+211,Huffman High School,Birmingham,alabama,Alabama,2018
+212,Seaside High School,Seaside,california,California,2018
+213,Big Sky High School,Missoula,montana,Montana,2018
+214,Douglass Park Elementary School,Portsmouth,virginia,Virginia,2018
+215,Great Mills High School,Great Mills,maryland,Maryland,2018
+277,Eupora High School,Europa,mississippi,Mississippi,2018
+278,Jackson High School,Jackson,michigan,Michigan,2018
+216,Forest High School,Ocala,florida,Florida,2018
+279,Benjamin Elijah Mays High School,Atlanta,georgia,Georgia,2018
+305,Highland High School,Albuquerque,new mexico,New Mexico,2018
+218,Highland High School,Palmdale,california,California,2018
+219,Dixon High School,Dixon,illinois,Illinois,2018
+220,Santa Fe High School,Santa Fe,texas,Texas,2018
+221,Noblesville West Middle School,Noblesville,indiana,Indiana,2018
+222,Villa Heights Elementary School,Charlotte,north carolina,North Carolina,2018
+223,Canyon Springs High School,North Las Vegas,nevada,Nevada,2018
+280,Lawrence Orr Elementary School,Charlotte,north carolina,North Carolina,2018
+224,Denali Montessori Elementary School,Anchorage,alaska,Alaska,2018
+225,Battle Creek Academy,Battle Creek,michigan,Michigan,2018
+226,Paul Laurence Dunbar School,Bridgeport,connecticut,Connecticut,2018
+227,Butler High School,Matthews,north carolina,North Carolina,2018
+228,Simonsdale Elementary School,Portsmouth,virginia,Virginia,2018
+229,Dennis Intermediate School,Richmond,indiana,Indiana,2018
+230,Cascade Middle School,Eugene,oregon,Oregon,2019
+281,North High School,Minneapolis,minnesota,Minnesota,2019
+231,Frederick Douglass High School,Baltimore,maryland,Maryland,2019
+232,V. Sue Cleveland High School,Rio Rancho,new mexico,New Mexico,2019
+234,Robert E. Lee High School,Montgomery,alabama,Alabama,2019
+233,Highlands Elementary School,Mission,kansas,Kansas,2019
+235,Blountsville Elementary School,Blountsville,alabama,Alabama,2019
+236,Prescott High School,Prescott,arkansas,Arkansas,2019
+282,New Joseph Bonnheim Community Charter School,Sacramento,california,California,2019
+237,Saint Clair Evans Academy,Jacksonville,florida,Florida,2019
+283,Flex High School,Flint,michigan,Michigan,2019
+239,STEM School Highlands Ranch,Highlands Ranch,colorado,Colorado,2019
+243,Menta Academy North,Waukegan,illinois,Illinois,2019
+245,Hendley Elementary School,Washington,district of columbia,District of Columbia,2019
+244,Blount Elementary School,Montgomery,alabama,Alabama,2019
+242,Hollenbeck Middle School,Los Angeles,california,California,2019
+241,South Aiken High School,Aiken,south carolina,South Carolina,2019
+240,Aiton Elementary School,Washington,district of columbia,District of Columbia,2019
+246,Ridgway High School,Santa Rosa,california,California,2019
+247,Achievement Academy,Baltimore,maryland,Maryland,2019
+284,Esteban Torres High School,Los Angeles,california,California,2019
+248,Saugus High School,Saugus,california,California,2019
+249,Waukesha South High School,Waukesha,wisconsin,Wisconsin,2019
+250,Oshkosh West High School,Oshkosh,wisconsin,Wisconsin,2019
+251,Decatur High School,Decatur,alabama,Alabama,2019
+252,Sacred Heart School,Jersey City,new jersey,New Jersey,2019
+253,Catholic Academy of New Haven,New Haven,connecticut,Connecticut,2019
+254,Bellaire High School,Bellaire,texas,Texas,2020
+255,McAuliffe Elementary School,Oxnard,california,California,2020
+256,West High School,Salt Lake City,utah,Utah,2020
+257,Antioch High School,Antioch,california,California,2020
+258,Cesar Chavez Community School,Albuquerque,new mexico,New Mexico,2020
+259,Sagemont School,Weston,florida,Florida,2020
+260,Ribault High School,Jacksonville,florida,Florida,2020
+261,Lincoln Elementary School,Leland,north carolina,North Carolina,2020
+262,Hendersonville Middle School,Hendersonville,north carolina,North Carolina,2020
+263,Watson Chapel Junior High,Pine Bluff,arkansas,Arkansas,2021
+267,Wayne Central Middle School,Ontario,new york,New York,2021
+268,Achievement First Amistad High School,New Haven,connecticut,Connecticut,2021
+264,Edwards Elementary School,Chesterfield,south carolina,South Carolina,2021
+269,Bishop Hartley High School,Columbus,ohio,Ohio,2021
+266,Selma High School,Selma,alabama,Alabama,2021
+265,Austin-East Magnet High,Knoxville,tennessee,Tennessee,2021
+270,Ply_mouth Middle School,Ply_mouth,minnesota,Minnesota,2021
+271,Smyrna Middle School,Smyrna,delaware,Delaware,2021
+272,Urban Dove Team Charter School,Brooklyn,new york,New York,2021
+273,Mary Evelyn Castle Elementary School,Indianapolis,indiana,Indiana,2021
+274,Ware Shoals High School,Ware Shoals,south carolina,South Carolina,2021
+275,Rigby Middle School,Rigby,idaho,Idaho,2021
+276,North Forest High School,Houston,texas,Texas,2021
+285,Saint Francis de Sales School,Houma,louisiana,Louisiana,2021
+286,Lithonia High School,Lithonia,georgia,Georgia,2021
+287,Washington Middle School,Albuquerque,new mexico,New Mexico,2021
+288,Orangeburg-Wilkinson High School,Orangeburg,south carolina,South Carolina,2021
+289,New Hanover High School,Wilmington,north carolina,North Carolina,2021
+290,Mount Tabor High School,Winston-Salem,north carolina,North Carolina,2021
+291,LaVergne High School,Lavergne,tennessee,Tennessee,2021
+292,Tri-County Education Center,Ferndale,michigan,Michigan,2021
+293,Heritage High School,Newport News,virginia,Virginia,2021
+294,Newton County Elementary School,Decatur,mississippi,Mississippi,2021
+295,Cummings K-8 Optional School,Memphis,tennessee,Tennessee,2021
+296,YES Prep Southwest Secondary,Houston,texas,Texas,2021
+297,Timberview High School,Arlington,texas,Texas,2021
+299,Little Rock Central High School,Little Rock,arkansas,Arkansas,2021
+298,Wendell Phillips Academy High School,Chicago,illinois,Illinois,2021
+300,James McDade Classical School,Chicago,illinois,Illinois,2021
+301,Cathedral School,Natchez,mississippi,Mississippi,2021
+306,Poughkeepsie High School,Poughkeepsie,new york,New York,2021
+307,P.S. 44,Bronx,new york,New York,2021
+302,Hinkley High School,Aurora,colorado,Colorado,2021
+308,Thornton Township High School,Harvey,illinois,Illinois,2021
+303,Cesar Chavez High School,Laveen,arizona,Arizona,2021
+304,Oxford High School,Oxford,michigan,Michigan,2021
+309,Sam Rayburn High School,Pasadena,texas,Texas,2021
+310,Great Oaks Charter School,New York,new york,New York,2021
+311,Jesse C. Carson High School,China Grove,north carolina,North Carolina,2021
+312,West Charlotte High School,Charlotte,north carolina,North Carolina,2021
+313,Eau Claire High School,Columbia,south carolina,South Carolina,2021
+314,Auburn High School,Rockford,illinois,Illinois,2022
+315,Seminole High School,Sanford,florida,Florida,2022
+317,Oliver Citywide Academy,Pittsburgh,pennsylvania,Pennsylvania,2022
+316,Magruder High School,Rockville,maryland,Maryland,2022
+323,South Education Center,Richfield,minnesota,Minnesota,2022
+335,Mount Vernon High School,Mount Vernon,new york,New York,2022
+324,Liberty Point International School,Pueblo West,colorado,Colorado,2022
+336,Jonesboro High School,Clayton County,georgia,Georgia,2022
+318,Olathe East High School,Olathe,kansas,Kansas,2022
+319,East High School,Des Moines,iowa,Iowa,2022
+320,North Gardens High School,Miami Gardens,florida,Florida,2022
+325,De Anza High School,Richmond,california,California,2022
+326,Eisenhower High School,Yakima,washington,Washington,2022
+339,Mott-Regent School,Hettinger County,north dakota,North Dakota,2022
+329,Rippon Middle School,Woodbridge,virginia,Virginia,2022
+337,Western High School,Las Vegas,nevada,Nevada,2022
+333,West Philadelphia Achievement Charter Elementary School,Philadelphia,pennsylvania,Pennsylvania,2022
+321,Tanglewood Middle,Greenville,south carolina,South Carolina,2022
+332,Lowellville Junior/Senior High School,Lowellville,ohio,Ohio,2022
+322,Erie High School,Erie,pennsylvania,Pennsylvania,2022
+334,Pine Bluff High School,Pine Bluff,arkansas,Arkansas,2022
+340,Edmund Burke School,Washington,district of columbia,District of Columbia,2022
+338,Aspen Ridge Elementary School,West Ishpeming,michigan,Michigan,2022
+344,Heights High School,Houston,texas,Texas,2022
+343,Alexander W. Dreyfoos School of Arts,West Palm Beach,florida,Florida,2022
+328,Walt Disney Magnet School,Chicago,illinois,Illinois,2022
+342,Mexia High School,Mexia,texas,Texas,2022
+327,Robb Elementary School,Uvalde,texas,Texas,2022
+348,Ulysses S. Grant High School,Los Angeles,california,California,2022
+347,Walnut Park Elementary,Gadsden,alabama,Alabama,2022
+345,John Finney High School,Vallejo,california,California,2022
+349,Madison Park Academy,Oakland,california,California,2022
+350,Mergenthaler Vocational Technical High School,Baltimore,maryland,Maryland,2022
+351,Treasure Cost Classical Academy,Stuart,florida,Florida,2022
+352,Mankato West High School,Mankoto,minnesota,Minnesota,2022
+353,Rudsdale High School,Oakland,california,California,2022
+354,Jeremiah E. Burke High School,Dorchester,massachusetts,Massachusetts,2022
+355,James Madison Academic Campus,Milwaukee,wisconsin,Wisconsin,2022
+356,Central Visual and Performing Arts High School,St. Louis,missouri,Missouri,2022
+357,Ingraham High School,Seattle,washington,Washington,2022
+358,Ball Elementary School,Ball,louisiana,Louisiana,2022
+359,South Vermillion High School,Clinton,indiana,Indiana,2022
+360,Freedom Preparatory High School,Memphis,tennessee,Tennessee,2022
+361,Suitland High School,Forestville,maryland,Maryland,2022
+364,Fuquay-Varina Middle School,Fuquay-Varina,north carolina,North Carolina,2022
+362,Cleveland High School,Portland,oregon,Oregon,2022
+371,Benjamin Franklin High School,Rochester,new york,New York,2023
+365,Beechcroft High School,Columbus,ohio,Ohio,2023
+363,Richneck Elementary School,Newport News,virginia,Virginia,2023
+366,William Penn High School,New Castle,delaware,Delaware,2023
+372,Booker T. Washington High School,New Orleans,louisiana,Louisiana,2023
+373,Plaza Academy,Kansas City,missouri,Missouri,2023
+367,Taylorsville High School,Taylorsville,utah,Utah,2023
+368,Gila Ridge High School,Yuma,arizona,Arizona,2023
+370,Geary Elementary School,Geary,oklahoma,Oklahoma,2023
+369,Ridgeview Jr. High School,Pickerington,ohio,Ohio,2023
+375,PS 78,Staten Island,new york,New York,2023
+374,Dalhart ISD schools,Dalhart,texas,Texas,2023
+376,Westinghouse Academy,Pittsburgh,pennsylvania,Pennsylvania,2023
+377,Palo Duro High School,Amarillo,texas,Texas,2023
+378,Lamar High School,Arlington,texas,Texas,2023
+381,Anniston High School,Anniston,alabama,Alabama,2023
+379,East High School,Denver,colorado,Colorado,2023
+382,Northridge Middle School,Middlebury,indiana,Indiana,2023
+380,The Covenant School,Nashville,tennessee,Tennessee,2023
+383,George Wythe High School,Richmond,virginia,Virginia,2023
+384,West High School,Knoxville,tennessee,Tennessee,2023
+385,International Academy of Flint K12,Flint,michigan,Michigan,2023
+388,Von Tobel Ed MS,Las Vegas,nevada,Nevada,2023
+386,E. Washington Rhodes Elementary School,Philadelphia,pennsylvania,Pennsylvania,2023
+387,Roosevelt High School,Washington,district of columbia,District of Columbia,2023
+390,St. John's Prep,Danvers,massachusetts,Massachusetts,2023
+389,Oliver Citywide Academy,Pittsburgh,pennsylvania,Pennsylvania,2023
+391,Michigan Collegiate High School,Warren,michigan,Michigan,2023

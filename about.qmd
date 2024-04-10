@@ -1,7 +1,9 @@
 ---
 title: "About"
 ---
-
 This site plans to raise awareness on the issue of school shootings and propose ways to prevent these tragedies. The goal is to provide a comprehensive resource for anyone interested in learning more about this critical issue.
 
 School shootings are a devastating reality that impact communities across the world. From heartbreaking losses to lasting trauma, the effects are profound and far reaching. Understanding the factors contributing to school shootings and exploring potential solutions are essential steps to creating a safer learning environment for children.
+
+### Data Set Description
+The [data](https://www.kaggle.com/datasets/joebeachcapital/school-shootings?resource=download) utilized in this report was compiled by the Washington Post, comprising incidents of school shootings that have taken place in the United States following the Columbine High Massacre on April 20, 1999. It specifically focuses on shootings that occurred within primary and secondary school premises during regular school hours, excluding incidents at colleges and universities. These information have been collated through the use of news articles, open-source database, reports and information from both schools and police departments. 
