@@ -8,13 +8,13 @@ library(slickR)
 shooting_data <- read.csv("school-shootings-data-personal.csv")
 df <- data.frame(shooting_data)
 
-shooting_data <- shooting_data %>%
-  group_by(year) %>%
-  mutate(Incidents = n())
+shooting_data1 <- shooting_data %>%
+  group_by(shooting_type_edited) %>%
+  mutate(Incidents1 = n())
 
-incident_summary <- shooting_data %>%
-  group_by(school_type, resource_officer) %>%
-  summarize(total_incidents = n())
+shooting_data2 <- shooting_data %>%
+  group_by(shooter_relationship_edited) %>%
+  mutate(Incidents2 = n())
 
 # Define UI for application 
 ui <- fluidPage(
@@ -43,7 +43,7 @@ ui <- fluidPage(
             typically involve specific motives or grievances against the victims.", style="text-align: justify; font-size: 15px;")
         ),
         conditionalPanel(
-          condition = "input.plot == 'Shooter\\'s Relationship to School'",
+          condition = "input.plot == 'Shooter\\'s Relation to School'",
           plotlyOutput("shooterrelation_plot", width = "100%"),
           br(),
           p("A significant proportion of perpetrators were either current students
@@ -95,9 +95,9 @@ server <- function(input, output) {
   
   #Shooting Type
   output$shootingtype_plot <- renderPlotly({
-    a <- ggplot(data = shooting_data, aes(x=shooting_type_edited,
+    a <- ggplot(data = shooting_data1, aes(x=shooting_type_edited,
                                           text = paste("Shooting Type: ",shooting_type_edited, "<br>",
-                                                       "Total Shootings: ", Incidents))) +
+                                                       "Total Shootings: ", Incidents1))) +
       geom_bar(fill = "#9d735d") +
       labs(title = "Shooting Type",
            x = "Shooting Type",
@@ -109,9 +109,9 @@ server <- function(input, output) {
   
   #Shooter Relationship
   output$shooterrelation_plot <- renderPlotly({
-    b <- ggplot(data = shooting_data[!is.na(shooting_data$shooter_relationship_edited), ], aes(x = shooter_relationship_edited,
+    b <- ggplot(data = shooting_data2[!is.na(shooting_data2$shooter_relationship_edited), ], aes(x = shooter_relationship_edited,
                                                                                                text = paste("Shooter Relation: ",shooter_relationship_edited, "<br>",
-                                                                                                      "Total Shootings: ", Incidents))) +
+                                                                                                      "Total Shootings: ", Incidents2))) +
       geom_bar(fill = "#c3cba8") +
       labs(title ="Shooter Relation to School",
            x = "Shooter Relation",

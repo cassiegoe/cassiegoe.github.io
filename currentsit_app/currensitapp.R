@@ -14,8 +14,8 @@ shooting_data <- read.csv("school-shootings-data-currentsit.csv")
 df <- data.frame(shooting_data)
 
 shooting_data <- shooting_data %>%
-  group_by(year) %>%
-  mutate(Incidents = n())
+  group_by(Year) %>%
+  mutate(Total_Shootings = n())
 
 ui <- fluidPage(
   tags$head(
@@ -38,17 +38,16 @@ server <- function(input, output) {
   
   #School Shootings Over the Years line plot
   output$shooting_plot <- renderPlotly({
-    p <- ggplot(data = shooting_data, aes(x = year, y = Incidents)) +
+    p <- ggplot(data = shooting_data, aes(x = Year, y = Total_Shootings)) +
       geom_line(color = "black") +
       geom_point(color = "black", size = 1) +
       labs(x = "Year",
-           y = "Number of Incidents",
+           y = "Number of Shootings",
            title = "School Shootings Over the Years") +
       theme_minimal()
     ggplotly(p)
   })
   
-
 }
 
 # Run the application 

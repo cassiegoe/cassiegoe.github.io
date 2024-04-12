@@ -38,7 +38,7 @@ h4 {
 <body>
 
 <!-- Title -->
-<h1>How Can We Prevent Gun Violence in Schools</h1>
+<h1>How Can School Shootings Be Prevented in the US</h1>
 
 <!-- Picture -->
 <div class="container">
@@ -89,12 +89,13 @@ The data suggests a stark contrast between public and private schools in terms o
 
 #### Race
 ```{=html}
-<iframe height="600" width="100%" frameborder="no" src="https://cassiegoe2.shinyapps.io/race_app/"> </iframe>
+<iframe height="400" width="100%" frameborder="no" src="https://cassiegoe2.shinyapps.io/race_app/"> </iframe>
 ```
+Given that targeted shootings are the predominant type, it also prompts the question: Could these incidents be racially driven? It appears that schools with a predominantly white student body have encountered the highest number of shootings, as evident from the greater number of squares representing each racial group. Additionally, they also appear to have the highest number of casualties, indicated by the size of each racial group's representation. However, while the data suggests a correlation between the racial demographics of schools and the frequency and severity of shootings, it does not definitively establish a causal relationship. To gain deeper insights into the potential role of racial factors in school shootings, additional analysis is necessary. This includes understanding the specific targets of the shootings and delving into the motivations driving each individual shooter. By examining these aspects more closely, we can better ascertain the extent to which racial factors may contribute to the occurrence of school shootings.
 
 #### Age 
 ```{=html}
-<iframe height="600" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/age_app/"> </iframe>
+<iframe height="420" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/age_app/"> </iframe>
 ```
 
 ### Access to Firearms

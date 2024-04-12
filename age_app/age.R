@@ -9,12 +9,8 @@ shooting_data <- read.csv("school-shootings-data-age.csv")
 df <- data.frame(shooting_data)
 
 shooting_data <- shooting_data %>%
-  group_by(year) %>%
-  mutate(Incidents = n())
-
-incident_summary <- shooting_data %>%
-  group_by(school_type, resource_officer) %>%
-  summarize(total_incidents = n())
+  group_by(age_shooter1) %>%
+  mutate(Incidents = n()) 
 
 # Define UI for application 
 ui <- fluidPage(
@@ -27,12 +23,16 @@ ui <- fluidPage(
   br(),
   
   fluidRow(
-    column(6, 
+    column(7, 
            plotlyOutput("age_plot")),
-    column(6, 
-           p(style="text-align: justify; font-size = 20px",
-             "Insert elab"))
-  )
+    column(5, 
+           p("The median age of school shooters between the year 1999 and 2023 were 
+             15-year-olds, with 48 counts of school shooting incidents. The second highest 
+             number of school shootings were perpetrated by 16-year-olds with 39 counts. 
+             Despite the legal age requirement for firearm purchases, which varies between 18 
+             and 21 depending on state policies, over half of these shootings were carried out 
+             by children and adolescents under the age of 18. So where are these young 
+             individuals obtaining their weapons from?", style="text-align: justify; font-size: 15px;")))
   
   
 )
@@ -43,13 +43,16 @@ server <- function(input, output) {
   
   #Age plot
   output$age_plot <- renderPlotly({
-    x <- ggplot(data = shooting_data, aes(x=age_shooter1)) +
+    x <- ggplot(data = shooting_data, aes(x=age_shooter1,
+                                          text = paste("Age of Soooter: ",age_shooter1, "<br>",
+                                                       "Total Shootings: ", Incidents))) +
       geom_bar(fill = "#af4444",color = "#dee2d0", width = 1) +
       labs(title = "Age of Shooter",
            x = "Age",
-           y = "Number of Incidents") +
+           y = "Number of Shootings") +
       theme_minimal()
-    ggplotly(x)
+    ggplotly(x, tooltip = "text") %>%
+      config(displayModeBar = FALSE)
   })
   
   

@@ -9,12 +9,8 @@ shooting_data <- read.csv("school-shootings-data-access.csv")
 df <- data.frame(shooting_data)
 
 shooting_data <- shooting_data %>%
-  group_by(year) %>%
+  group_by(Weapon_source_edited) %>%
   mutate(Incidents = n())
-
-incident_summary <- shooting_data %>%
-  group_by(school_type, resource_officer) %>%
-  summarize(total_incidents = n())
 
 # Define UI for application 
 ui <- fluidPage(
@@ -89,8 +85,8 @@ server <- function(input, output) {
     b <- ggplot(data = shooting_data[!is.na(shooting_data$Weapon_source_edited), ], aes(x = Weapon_source_edited,
                                                                                         text = paste("Weapon Source: ",Weapon_source_edited, "<br>",
                                                                                                      "Total Shootings: ", Incidents))) +
-      geom_bar(fill = "#dee2d0") +
-      labs(title ="Sources of Shooters' Weapons",
+      geom_bar(fill = "#769776") +
+      labs(title ="Source of Shooters' Weapon",
            x = "Weapon Source",
            y = " Number of School Shootings") +
       theme_minimal() + coord_flip()
