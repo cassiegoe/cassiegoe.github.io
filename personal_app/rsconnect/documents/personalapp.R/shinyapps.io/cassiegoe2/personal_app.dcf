@@ -5,7 +5,7 @@ account: cassiegoe2
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11684371
-bundleId: 8471164
+bundleId: 8485820
 url: https://cassiegoe2.shinyapps.io/personal_app/
 version: 1
 asMultiple: FALSE

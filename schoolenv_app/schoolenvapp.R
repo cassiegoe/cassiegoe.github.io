@@ -10,7 +10,10 @@ shooting_data_frame <- data.frame(shooting_data)
 
 incident_summary <- shooting_data %>%
   group_by(school_type, resource_officer) %>%
-  summarize(total_incidents = n())
+  summarize(total_incidents = n()) %>%
+
+
+print(incident_summary)
 
 
 # Define UI for application 
@@ -23,26 +26,19 @@ ui <- fluidPage(
   
   #school environment: section for school type & security
   fluidRow(
-    column(8, 
+    column(7, 
            plotlyOutput("officerxtype_plot")),
-    column(4, 
-           p(style="text-align: justify; font-size = 20px",
-             "Insert elab"))
-  ),
-  br(),
-  card(
-    style = "background-color: white; font-family: Arial, sans-serif;", 
-    card_header(
-      class = "bg-dark text-white",
-      "What can be done?"
-    ),
-    markdown(
-      "Insert Solution")
-  ),
-  
-  
-  
-  
+    column(5, 
+           card(
+             style = "font-size: 13px; background-color: white; font-family: Arial, sans-serif;", 
+             card_header(
+               class = "bg-dark text-white",
+               "What can be done?"
+             ),
+             markdown(
+               "Insert Solution")
+           )))
+
 )
 
 
@@ -53,15 +49,20 @@ server <- function(input, output) {
   
   # officer x type plot
   output$officerxtype_plot <- renderPlotly({
-    y <- ggplot(data = incident_summary, aes(x = school_type, y = total_incidents, fill = resource_officer)) +
+    y <- ggplot(data = incident_summary, aes(x = school_type, y = total_incidents, fill = resource_officer, 
+                                             text = paste("School Type: ", school_type, "<br>",
+                                                          "Resource Officer: ", resource_officer, "<br>",
+                                                          "Total Shootings: ", total_incidents))) +
       geom_bar(stat = "identity", position = position_dodge(width = 0.9)) +
       labs(title = "School Type and Resource Officer Presence",
            x = "School Type",
-           y = "Number of Incidents",
+           y = "Number of Shootings",
            fill = "Presence of Resource Officer") +
-      scale_fill_manual(values = my_colors)
+      scale_fill_manual(values = my_colors) +
       theme_minimal()
-    ggplotly(y)
+      
+    ggplotly(y, tooltip = "text") %>%
+      config(displayModeBar = FALSE)
   })
 
   }

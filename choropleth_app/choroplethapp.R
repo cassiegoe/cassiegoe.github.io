@@ -9,7 +9,7 @@ shooting_data_map <- read.csv("school-shootings-data-map.csv")
 
 
 fontStyle = list(
-  family = "DM Sans",
+  family = "Times New Roman",
   size = 15,
   color = "black"
 )
@@ -24,7 +24,7 @@ label = list(
 # Define UI for application 
 ui <- fluidPage(
 
-navbarPage("Filter by:",
+  navbarPage("Filter by:",
            tabPanel("Total Incidents Across Years",
            mainPanel(plotlyOutput("choropleth",width = "150%"))),
            
@@ -32,7 +32,7 @@ navbarPage("Filter by:",
             mainPanel(plotlyOutput("choropleth2", width = "150%")))
 )
 
-) 
+)
   
 
 
@@ -95,7 +95,7 @@ server <- function(input, output) {
                 text = ~hover,
                 hoverinfo = 'text') %>%
       layout(geo = list(scope = 'usa'),
-             font = list(family ="DM Sans"),
+             font = list(family ="Times New Roman"),
              title = "School Shootings in the US\n1999 - 2023 ") %>%
       style(hoverlabel = label) %>%
       config(displayModeBar = FALSE)

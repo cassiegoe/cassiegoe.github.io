@@ -1,22 +1,52 @@
----
-title: "How Can We Prevent Gun Violence in Schools"
----
-
+<html>
+<head>
 <style>
 h1 {
-  font-size: 36px; 
+  font-size: 50px; 
   font-weight: bold; 
   color: #333; 
   font-family: Times New Roman
 }
 h2 {
-  font-size: 24px; 
+  font-size: 30px; 
   font-weight: bold; 
   color: #333; 
+  font-family: Times New Roman;
 }
-</style>
 
-## Understanding the Crisis: The State of School Shootings
+h3 {
+  font-size: 28px; 
+  font-weight: bold; 
+  color: #333; 
+  font-family: Times New Roman;
+}
+
+h4 {
+  font-size: 23px; 
+  font-weight: bold; 
+  color: #333; 
+  font-family: Times New Roman;
+}
+
+.img-cropped {
+   width: 80%; 
+  height: auto;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Title -->
+<h1>How Can We Prevent Gun Violence in Schools</h1>
+
+<!-- Picture -->
+<div class="container">
+  <!-- Cropped Image -->
+  <img src="gun-violence-image.jpg" alt="Image" class="img-cropped">
+</div>
+
+## Understanding the Crisis: State of School Shootings
 ```{=html}
 <iframe height="400" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/currentsit_app/"> </iframe>
 ```
@@ -32,24 +62,27 @@ According to the [Centers for Disease Control and Prevention (CDC)](https://www-
 ## Addressing the Epidemic: Factors
 As we confront the alarming rise in school shootings, it becomes imperative to understand the factors driving this disturbing trend and to explore effective strategies for prevention. Merely acknowledging the grim reality of these incidents is not enough; we must also delve deeper into the root causes, systemic failures, and societal factors that contribute to the epidemic of school shootings. By examining these factors, we can identify areas for intervention and develop evidence-based solutions to prevent further tragedies. 
 
-To address this issue, we can explore the following questions to gain a deeper insight:
-- What are the common motivations and patterns observed among school shooters?
+To address this issue, we can explore the following questions to gain a deeper insight: 
+
+ * What are the common motivations and patterns observed among school shooters?
 - What factors could have contributed to the rise in school shootings?
 - How can understanding these factors help to prevent future occurrences?
 
 ### Location
 ```{=html}
-<iframe height="700" width="100%" frameborder="no" src="https://cassiegoe2.shinyapps.io/choropleth_app/"> </iframe>
+<iframe height="480" width="100%" frameborder="no" src="https://cassiegoe2.shinyapps.io/choropleth_app/"> </iframe>
 ```
+California, Texas, and Florida stand out with the highest total number of school shooting incidents recorded between 1999 and 2023. In contrast, Wyoming, West Virginia, Vermont, and Maine were the only states that did not experience any school shooting events during this timeframe. However, it is essential to contextualize these findings by considering the population distribution across states. California, Texas, and Florida happen to be the top three most populous states in the US. This demographic aspect could potentially influence the higher incidence rates of shootings observed in these states.
 
 ### School Environment 
 ```{=html}
-<iframe height="600" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/schoolenv_app/"> </iframe>
+<iframe height="400" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/schoolenv_app/"> </iframe>
 ```
+The data suggests a stark contrast between public and private schools in terms of the frequency of shooting incidents. Public schools appear to be significantly more susceptible to such events compared to their private counterparts. This could be attributed to the differing school climates between private and public schools. Schools with inadequate student-teacher bonding, low student engagement in school activities, and a culture that tolerates disrespect and lacks security measures exhibited elevated levels of school shootings [1]. In   private schools, individual tutors were common and a lower student to teacher ratio was found, with greater positive interactions between student and teachers and after school programs for students were also more prevalent [2]. Additionally,the presence of a resource officer emerges as a significant factor influencing the occurrence of school shootings. Schools with a resource officer on-site tend to experience fewer shooting incidents. This observation underscores the potential role of resource officers in enhancing school safety and mitigating the risk of potential threats on campus.
 
-### Personal Motivations
+### Situational Factors
 ```{=html}
-<iframe height="700" width="100%" frameborder="no" src="https://cassiegoe2.shinyapps.io/personal_app/"> </iframe>
+<iframe height="950" width="100%" frameborder="no" src="https://cassiegoe2.shinyapps.io/personal_app/"> </iframe>
 ```
 
 ### Demographic Factors
@@ -66,13 +99,33 @@ To address this issue, we can explore the following questions to gain a deeper i
 
 ### Access to Firearms
 ```{=html}
-<iframe height="1000" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/access_app/"> </iframe>
+<iframe height="1200" width="100%" frameborder="no" src="https://cassiegoe.shinyapps.io/access_app/"> </iframe>
 ```
 
-### Temporal Patterns 
+### Time 
 ```{=html}
 <iframe height="1200" width="100%" frameborder="no" src="https://cassiegoe2.shinyapps.io/time_app/"> </iframe>
 ```
 
 ## Conclusion
+
+## References
+[1] Wike, T. L., & Fraser, M. W. (2009). School shootings: Making sense of the senseless. Aggression and Violent Behavior, 14(3), 162–169. https://doi.org/10.1016/j.avb.2009.01.005
+
+[2] Peterson, P., Howell, W., Wolf, P. J., & Campbell, D. (2003). School vouchers. Results from randomized experiments. In The economics of school choice (pp. 107-144). University of Chicago Press.
+
+[3] Schuster, M. A., Franke, T. M., Bastian, A. M., Sor, S., & Halfon, N. (2000). Firearm Storage Patterns in US Homes With Children. American Public Health Association. https://www.rand.org/pubs/reprints/RP890.html
+Understanding and Preventing Violence: Volume 1. (1993). National Academies Press. https://doi.org/10.17226/1861
+
+[4] https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Handguns-in-the-Home.aspx
+
+[5] Siegel, M., Ross, C. S., & King, C., 3rd (2013). The relationship between gun ownership and firearm homicide rates in the United States, 1981-2010. American journal of public health, 103(11), 2098–2105. https://doi-org.libproxy1.nus.edu.sg/10.2105/AJPH.2013.301409 
+
+[6] Muschert, G. W. (2007). Research in School Shootings. Sociology Compass, 1(1), 60–80. https://doi.org/10.1111/j.1751-9020.2007.00008.x
+Understanding and Preventing Violence: Volume 1. (1993). National Academies Press. https://doi.org/10.17226/1861
+
+[7] Burgess, A. W., Garbarino, C., & Carlson, M. I. (2006). Pathological Teasing and Bullying Turned Deadly: Shooters and Suicide. Victims & Offenders, 1(1), 1–14. https://doi-org.libproxy1.nus.edu.sg/10.1080/15564880500498705 
+
+</body>
+</html>
 
