@@ -10,10 +10,7 @@ shooting_data_frame <- data.frame(shooting_data)
 
 incident_summary <- shooting_data %>%
   group_by(school_type, resource_officer) %>%
-  summarize(total_incidents = n()) %>%
-
-
-print(incident_summary)
+  summarize(total_incidents = n()) 
 
 
 # Define UI for application 
@@ -30,13 +27,20 @@ ui <- fluidPage(
            plotlyOutput("officerxtype_plot")),
     column(5, 
            card(
-             style = "font-size: 13px; background-color: white; font-family: Arial, sans-serif;", 
+             style = " font-size: 13px; background-color: #E9C874; font-family: Arial, sans-serif;", 
              card_header(
-               class = "bg-dark text-white",
-               "What can be done?"
+               style = "background-color: #9CAFAA;",
+               strong("What can be done?", style="text-align: justify; font-size: 15px;"),
              ),
              markdown(
-               "Insert Solution")
+               "- **Mentorship programs and extracurricular activities:** Foster stronger connections 
+               between students, teachers, and schools to promote a sense of belonging in students.
+               - **Increased Resource Officer Deployment:** Deploying resource officers particularly 
+               at identified high-risk areas, can help deter potential perpetrators and swiftly 
+               respond to security threats.
+               - **Allocate Funding to School Security:** Prioritizing funding towards 
+               security enhancements, such as surveillance systems and emergency response protocols, 
+               can bolster school security infrastructure and efforts to mitigate the risk of violence.")
            )))
 
 )

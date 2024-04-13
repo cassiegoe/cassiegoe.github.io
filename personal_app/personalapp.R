@@ -28,7 +28,7 @@ ui <- fluidPage(
    sidebarLayout(
     sidebarPanel(
       radioButtons("plot", h3("Choose Factor:"), 
-                   c("Type of Shooting", "Shooter's Relationship to School"))),
+                   c("Type of Shooting", "Shooter's Relation to School"))),
 
       mainPanel(
         conditionalPanel(
@@ -64,22 +64,30 @@ ui <- fluidPage(
       p("The majority of perpetrators involved in targeted shootings are typically 
         current or former members of a school community, where their primary motive often 
         stems from seeking revenge due to real or perceived mistreatment by a particular individual 
-        or group [6]. This mistreatment encompasses any form of harm, injustice, or abuse experienced 
+        or group [4]. This mistreatment encompasses any form of harm, injustice, or abuse experienced 
         by the perpetrator at the hands of specific individuals or groups within the school. For instance, both perpetrators 
-        and victims of bullying show a higher correlation with violent behavior and weapon carrying [7]. 
+        and victims of bullying show a higher correlation with violent behavior and weapon carrying [5]. 
         The primary motives of shooters could reflect deeper systemic issues that can encompass various 
         aspects, including racial discrimination. ", style="text-align: justify; font-size: 15px;")
     ),
     column(
       width = 6,
       card(
-        style = "background-color: white; font-family: Arial, sans-serif;", 
+        style = " font-size: 13px; background-color: #E9C874; font-family: Arial, sans-serif;", 
         card_header(
-          class = "bg-dark text-white",
-          "What can be done?"
+         style = "background-color: #9CAFAA;",
+         strong("What can be done?", style="text-align: justify; font-size: 15px;"),
         ),
         markdown(
-          "Insert Solution")
+          "- **Early Identification and Intervention:** Implement proactive measures to identify 
+          students who may be at risk of engaging in targeted violence. This can include 
+          enhanced threat assessment protocols, regular mental health screenings, and 
+          training for school staff to recognize warning signs of distress or potential violent behavior.
+          - **Improved Student Support Services:** Increase access to mental health 
+          resources and support services within schools to address the underlying 
+          issues contributing to students' feelings of isolation, anger, or resentment. 
+          This may involve hiring additional school counsellors, establishing peer support groups, 
+          and providing trauma-informed care for students who have experienced mistreatment or trauma.")
       )
      )
    )
@@ -109,9 +117,9 @@ server <- function(input, output) {
   
   #Shooter Relationship
   output$shooterrelation_plot <- renderPlotly({
-    b <- ggplot(data = shooting_data2[!is.na(shooting_data2$shooter_relationship_edited), ], aes(x = shooter_relationship_edited,
-                                                                                               text = paste("Shooter Relation: ",shooter_relationship_edited, "<br>",
-                                                                                                      "Total Shootings: ", Incidents2))) +
+    b <- ggplot(data = shooting_data2[!is.na(shooting_data2$shooter_relationship_edited), ], aes(x = shooter_relationship_edited, 
+                                                                                                 text = paste("Shooter Relation: ",shooter_relationship_edited, "<br>",
+                                                                                                              "Total Shootings: ", Incidents2))) +
       geom_bar(fill = "#c3cba8") +
       labs(title ="Shooter Relation to School",
            x = "Shooter Relation",
