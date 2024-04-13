@@ -40,11 +40,17 @@ server <- function(input, output) {
       filter(hour <= 20) %>%
       group_by(year, hour, day) %>%
       count() %>%
-      ggplot(aes(x = year, y = hour, size = n)) +
-      geom_point(alpha = 0.4) +
+      ggplot(aes(x = year, y = hour, size = n, text = paste("Year: ",year, "<br>",
+                                                            "Hour: ", hour, "<br>",
+                                                            "Total Shootings: ", n))) +
+      geom_point(alpha = 0.6 ,color= "#9d735d") +
       facet_wrap(~ day) +
-      labs(x = "Year", y = "Hour of Day", fill = "Number of Incidents") +
+      labs(x = "Year", y = "Hour of Day", fill = "Number of Shootings") +
       theme_minimal()
+    
+    ggplotly(tooltip = "text") %>%
+      config(displayModeBar = FALSE)
+    
   })
   
   
