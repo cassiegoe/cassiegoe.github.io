@@ -1,0 +1,287 @@
+// default.js
+// Should be loaded before custom js
+
+var isOpera = !! window.opera || navigator.userAgent.indexOf(' OPR/') >= 0; // Opera 8.0+ (UA detection to detect Blink/v8-powered Opera)
+var isFirefox = typeof InstallTrigger !== 'undefined'; // Firefox 1.0+
+var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0; // At least Safari 3+: "[object HTMLElementConstructor]"
+var isChrome = !! window.chrome && !isOpera; // Chrome 1+
+var isIE = /*@cc_on!@*/ false || document.documentMode;
+var isMac = navigator.userAgent.indexOf('Mac OS X') != -1; // At least IE6
+
+if (isMac && isChrome) {
+    $('body').addClass('isMac isChrome');
+}
+
+$(function() {
+
+    // placeholder fix
+
+    if (navigator.appVersion.indexOf("MSIE 7.") != -1 || navigator.appVersion.indexOf("MSIE 8.") != -1 || navigator.appVersion.indexOf("MSIE 9.") != -1) {
+
+        $('input[placeholder]:not(.phFix)').each(function() {
+            if ($(this).val() === '' && $(this).attr('placeholder') !== '')
+                $(this).val($(this).attr('placeholder')).addClass('phFix');
+            if ($(this).hasClass('disabled') && !$($(this), '#postal-address-input-group').length) {
+                $(this).removeClass('phFix');
+            }
+        });
+
+        $(document).on('focus', 'input[placeholder].phFix', function() {
+            if ($(this).val() == $(this).attr('placeholder')) {
+                $(this).val('').removeClass('phFix');
+            }
+        });
+
+        $(document).on('blur', 'input[placeholder]:not(.my-date)', function() {
+            if (($(this).val() === '' || $(this).val() == $(this).attr('placeholder')) && $(this).attr('placeholder') !== '') {
+                $(this).val($(this).attr('placeholder')).addClass('phFix');
+            }
+        });
+
+        $('.add-file, [value="not_ok"]').click(function() {
+            setTimeout(function() {
+                $('input[placeholder]:not(.phFix)').each(function() {
+                    if ($(this).val() === '')
+                        $(this).val($(this).attr('placeholder')).addClass('phFix');
+                });
+                $('input.phFix.disabled').each(function() {
+                    $(this).removeClass('phFix');
+                });
+            }, 10);
+        });
+
+        $('button[type=submit], input[type=submit]').not('#add-document.btn-success').click(function() {
+            $('input.phFix').each(function() {
+                $(this).val('');
+            });
+        });
+
+        $(document).on('focus', 'input[placeholder].phFix.my-date', function() {
+            var inI = $(this);
+
+            function offEv() {
+                inI.removeClass('phFix');
+                $(document).off('mousedown', '.day', offEv);
+            }
+            $(document).on('mousedown', '.day', offEv);
+        });
+
+    }
+});
+
+
+/*Layout Fix for ie7*/
+$(function() {
+
+    if (navigator.appVersion.indexOf("MSIE 7.") != -1) {
+
+        /*specific conrtol*/
+        if ($('#bluk-update').length || $('#form_barcode').length) {
+
+            var removeOffsetItem = $('#bluk-update .col-md-offset-2,#form_barcode .col-md-offset-2 ');
+
+            removeOffset(removeOffsetItem);
+
+            $(window).resize(function() {
+                removeOffset(removeOffsetItem);
+            });
+
+            var removeOffset = function (removeItem) {
+                if (parseInt($(window).width()) < 992) {
+                    removeItem.each(function() {
+                        $(this).removeClass('col-md-offset-2');
+                    });
+                }
+            };
+        }
+
+        // recalculate width of "col-"" div
+        if (!$('#step-awards-form').length && !$('#step-academic-form').length) {
+            $('[class*="col-"], input, textarea').not('.resized, .btn, [type="radio"]').each(function() {
+                var fullW = $(this).outerWidth(),
+                    actualW = $(this).width(),
+                    wDiff = fullW - actualW,
+                    newW = actualW - wDiff;
+
+                $(this).css('width', newW - 1).addClass('resized');
+            });
+        }
+
+        // add style to dynamic add form
+        if ($('#step-awards-form').length || $('#step-academic-form').length) {
+
+            $('.col-md-9:first ,.col-md-3:first, span.col-md-6').each(function() {
+                var fullW = $(this).outerWidth(),
+                    actualW = $(this).width(),
+                    wDiff = fullW - actualW,
+                    newW = actualW - wDiff;
+
+                $(this).css('width', newW - 1).addClass('resized');
+            });
+
+            var addStyle = '';
+            $('form [class*="col-"]:not(".resized")').each(function() {
+                var fullW = $(this).outerWidth(),
+                    actualW = $(this).width(),
+                    wDiff = fullW - actualW,
+                    newW = actualW - wDiff,
+                    thisClass = $(this).attr('class').split(' ').join('.');
+
+                addStyle += ' .form-group .' + thisClass + '{ width:' + (newW - 1) + 'px}';
+            });
+
+            $('head').append('<style type="text/css">' + addStyle + '</style>');
+
+        }
+
+
+        /*sp Fixed*/
+
+        if ($('input[name*="programme_other"]').length) {
+            $('input[name*="programme_other"]').parent().css({
+                'width': parseInt($('input[name*="programme_other"]').parent().width() - 24),
+                'padding': 0,
+                'padding-left': 6
+            });
+            $('input[name*="programme_other"]').width(parseInt($('input[name*="programme_other"]').width()) - 30);
+        }
+
+        /*sp Fixed End*/
+
+
+        // end
+
+        //$('[class*="col-"] > input.form-control').each(function() {
+        //    $(this).css('width', parseInt($(this).parent().width(), 10) - 30);
+        //});
+
+        /*fix input-group width*/
+        if ($('[class*="col-"] > .input-group').length || $(' .form-group > .input-group').length) {
+            $('[class*="col-"] > .input-group , .form-group > .input-group').each(function() {
+
+                var thisItm = $(this),
+                    thisInput = thisItm.find('input'),
+                    thisSpan = thisItm.find('.input-group-addon'),
+                    thisSpanWidth = parseInt(thisSpan.outerWidth()),
+                    thisColWidth = parseInt(thisItm.width());
+
+
+                thisInput.css({
+                    'width': thisColWidth - thisSpanWidth - 26
+                });
+
+            });
+        }
+
+        /*fix selectbox width*/
+        if ($('[class*="col-"] > input').length) {
+            $('[class*="col-"] > input').each(function() {
+                var thisItm = $(this),
+                    thisPaddingLeft = parseInt(thisItm.css('padding-left')),
+                    thisPaddingRight = parseInt(thisItm.css('padding-right')),
+                    colWidth = thisItm.parent().width();
+
+                thisItm.width(colWidth - thisPaddingLeft - thisPaddingRight - 2);
+
+            });
+        }
+    }
+});
+
+if ($.validator !== undefined) {
+
+    // Modify jQuery Validation plugin for Bootstrap 3.0
+    $.validator.setDefaults({
+        highlight: function(element) {
+            if ($(element).closest('.form-group-inner').length > 0) {
+                $(element).closest('.form-group-inner').addClass('has-error');
+            } else {
+                $(element).closest('.form-group').addClass('has-error');
+            }
+            $(element).closest('.form-group').find('.control-label').addClass('has-error-label');
+        },
+        unhighlight: function(element) {
+            if ($(element).closest('.form-group-inner').length > 0) {
+                $(element).closest('.form-group-inner').removeClass('has-error');
+            } else {
+                $(element).closest('.form-group').removeClass('has-error');
+            }
+            if ($(element).closest('.form-group').find('.has-error').addBack('.has-error').length <= 0) {
+                $(element).closest('.form-group').find('.control-label').removeClass('has-error-label');
+            }
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function(error, element) {
+            if (element.closest('.form-group').find('.error-holder').length) {
+                element.closest('.form-group').find('.error-holder').append(error);
+            } else if (element.parent('.input-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        }
+    });
+
+    // Additional jQuery validation methods
+    jQuery.validator.addMethod("alphabetsonly", function(value, element) {
+        return this.optional(element) || /^[a-zA-Z\s]+$/i.test(value);
+    }, "This field can contain alphabets only.");
+
+    jQuery.validator.addMethod("lettersnumbersparaentheses", function(value, element) {
+        return this.optional(element) || /^[\w\(\)]+$/i.test(value);
+    }, "This field can contain letters, numbers, or parentheses only.");
+
+    jQuery.validator.addMethod("alphanumeric", function(value, element) {
+        return this.optional(element) || /^\w+$/i.test(value);
+    }, "This field can contain letters or numbers only.");
+
+    jQuery.validator.addMethod("tel", function(value, element) {
+        return this.optional(element) || /^[0-9\-]+$/i.test(value);
+    }, "This field can contain numbers or dashes only.");
+
+    jQuery.validator.addMethod("hkid", function(value, element) {
+        // for detail, please refer to site_helper function valid_hkid
+        var weight = {},
+            chars = {},
+            sum = 0,
+            checkValue = '';
+
+        for (var i=65; i < 91; i++) {
+            weight[String.fromCharCode(i)] = (i-65)%11+1;
+        }
+        weight[' '] = 0;
+
+        if(value.length == 8 || value.length == 9) {
+            value = value.toUpperCase();
+
+            if (value.length == 8) {
+                value = ' ' + value;
+            }
+
+            chars = value.split('');
+
+            sum += weight[chars[0]]*9;
+            sum += weight[chars[1]]*8;
+
+            for(var i = 2; i < 8; i++) {
+                sum += chars[i]*(9-i);
+            }
+
+            if($.isNumeric(chars[8])) {
+                checkValue = chars[8];
+            } else if(chars[8] == 'A') {
+                checkValue = 10;
+            }
+
+            if ($.isNumeric(chars[8]) && chars[8] != '0') {
+                checkValue = chars[8];
+            } else if (chars[8] == '0') {
+                checkValue = 11;
+            }
+        }
+
+        return this.optional(element) || (/^[a-z]{1,2}[0-9]{6}[a0-9]$/i.test(value) || checkValue == (11 - sum%11));
+    }, "Please input a correct HKID card number (without parentheses).");
+}
+

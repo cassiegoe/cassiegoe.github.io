@@ -1,0 +1,231 @@
+// JS for app/views/shared/_form_application_proposed.php partials
+//
+
+; (function($, window, document, undefined) {
+
+    var pluginName = "applicationForm",
+        defaults = {
+            'step': 'all' // 'all', 'information', 'language', 'current', 'proposed', 'statement'
+        };
+
+    function Plugin(element, options) {
+        this.element = element;
+        this.options = $.extend({}, defaults, options);
+        this._defaults = defaults;
+        this._name = pluginName;
+        this.init();
+    }
+
+    Plugin.prototype = {
+
+        init: function() {
+
+            var $form = $(this.element);
+
+            var formValidateRules = {};
+            var formValidateSubmitHandler = null;
+
+            if (this.options.step == 'all' || this.options.step == 'information') {
+
+                formValidateRules.hkid_no = {
+                    required: {
+                        depends: function(element) {
+                            return $(':input[name="is_require_visa"][value="No"]:checked').length > 0;
+                        }
+                    },
+                    hkid: true
+                };
+
+                formValidateRules.uid = {
+                    required: {
+                        depends: function(element) {
+                            return $(':input[name="has_uid"][value="Yes"]:checked').length > 0;
+                        }
+                    }
+                };
+            }
+
+            if (this.options.step == 'all' || this.options.step == 'language') {
+
+                var requiredLangIsNative = {
+                    depends: function(element) {
+                        return $(':input[name="lang_is_native"][value="No"]:checked').length > 0;
+                    }
+                };
+
+                var requiredLangIsNative2 = {
+                    depends: function(element) {
+                        return $(':input[name="lang_is_native"][value="No"]:checked').length > 0 && ($(':input[name="lang_test_type"]').val() == 'IELTS' || $(':input[name="lang_test_type"]').val() == 'TOEFL');
+                    }
+                };
+
+                formValidateRules.lang_test_type = {
+                    required: requiredLangIsNative
+                };
+                formValidateRules.lang_test_date = {
+                    required: requiredLangIsNative2
+                };
+                formValidateRules.lang_test_result = {
+                    required: requiredLangIsNative2
+                };
+            }
+
+            if (this.options.step == 'all' || this.options.step == 'proposed') {
+
+                formValidateSubmitHandler = function(form) {
+                    _origo.revertFromUniqueNames($('#course-panels-holder')); // Revert from unique name to 'normal' name before submission
+                    form.submit();
+                };
+            }
+
+            // Activate jQuery form validation
+            $form.validate({
+                rules: formValidateRules,
+                onkeyup: false,
+                onblur: false,
+                submitHandler: formValidateSubmitHandler
+            });
+
+            // Setup proposed courses section
+            if (this.options.step == 'all' || this.options.step == 'proposed') {
+
+                var $coursePanelsHolder = $('#course-panels-holder');
+                var courseCodes = $coursePanelsHolder.data('course-codes');
+                var $addMoreButton = $('#button-add-more');
+                var $coursePanelTemplate = $('#course-panel-template');
+
+                jQuery.validator.addMethod("formApplicationProposedcourseCode", function(value, element) {
+                    return this.optional(element) || _origo.inArrayIn(value, courseCodes) > -1;
+                }, "Invalid course code");
+
+                // Add validation rules to checking if course codes exist
+                var addCourseCodeValidationRules = function(panelElement) {
+                    $(panelElement).find(':input.proposed-course-code').each(function() {
+                        $(this).rules('add', {
+                            formApplicationProposedcourseCode: true
+                        });
+                    });
+                };
+
+                // Show / Hide the close buttons
+                var adjustButtons = function() {
+
+                    var $closeButton = $coursePanelsHolder.find('.panel button.close');
+
+                    if ($closeButton.length > 1) {
+                        $closeButton.show();
+                    } else {
+                        $closeButton.hide();
+                    }
+                    if ($closeButton.length >= 12) {
+                        $addMoreButton.attr('disabled', 'disabled').addClass('disabled');
+                    } else {
+                        $addMoreButton.removeAttr('disabled').removeClass('disabled');
+                    }
+                };
+
+                var reloadCourseInfo = function(el, noDelay) {
+
+                    if (_origo.inArrayIn($(el).val(), courseCodes) > -1) {
+
+                        var that = el;
+                        var ajaxCall = function() {
+                            $.ajax({
+                                dataType: "json",
+                                type: 'GET',
+                                url: $(that).data('url'),
+                                data: {
+                                    'code': $(that).val()
+                                },
+                                success: function(result) {
+                                    if (result.code == $(that).val()) {
+                                        var $panel = $(that).closest('.panel');
+                                        $panel.find('.course-title').html(result.title_html);
+                                        $panel.find('.course-credits').html(result.credits);
+                                        $panel.find('.course-faculty').html(result.faculty_name);
+                                    }
+                                }
+                            });
+                        };
+
+                        if (typeof noDelay !== 'undefined' && noDelay) {
+                            ajaxCall();
+                        } else {
+                            _origo.delay(function() {
+                                ajaxCall();
+                            }, 200);
+                        }
+
+                    } else {
+                        var $panel = $(el).closest('.panel');
+                        $panel.find('.course-title').html('');
+                        $panel.find('.course-credits').html('');
+                        $panel.find('.course-faculty').html('');
+                    }
+                };
+
+                // Click event for Add More button
+                $addMoreButton.click(function() {
+
+                    var $panel = $coursePanelTemplate.children().clone().hide();
+                    $panel.find(':input').removeAttr('disabled');
+                    $panel.appendTo($coursePanelsHolder).slideDown("normal");
+
+                    _origo.convertToUniqueNames($panel);
+                    addCourseCodeValidationRules($panel);
+                    adjustButtons();
+                });
+
+                // Click event for Close buttons
+                $coursePanelsHolder.on('click', '.panel .panel-heading button.close', function(e) {
+
+                    var thisPanel = $(this).closest('.panel');
+
+                    thisPanel.slideUp("normal", function() {
+                        $(this).remove();
+                        adjustButtons();
+                    });
+                });
+
+                // Ajax to load the course title, credits and faculty name from course code
+                // for valid course codes
+                $coursePanelsHolder.on('keyup', ':input.proposed-course-code', function(e) {
+                    reloadCourseInfo(this);
+                });
+
+                $coursePanelTemplate.find(':input:hidden').attr('disabled', 'disabled');
+                $form.find(':input.proposed-course-code').each(function() {
+                    reloadCourseInfo(this, true);
+                });
+                _origo.convertToUniqueNames($coursePanelsHolder);
+                addCourseCodeValidationRules($coursePanelsHolder);
+                adjustButtons();
+            }
+
+            // Setup datepickers
+
+            $(":input.my-date").datepicker({
+                format: "dd/mm/yyyy",
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            $(":input.my-year-month").datepicker({
+                format: "mm/yyyy",
+                autoclose: true,
+                todayHighlight: true,
+                minViewMode: 1
+            });
+        }
+    };
+
+    $.fn[pluginName] = function(options) {
+        return this.each(function() {
+            if (!$.data(this, "plugin_" + pluginName)) {
+                $.data(this, "plugin_" + pluginName,
+                    new Plugin(this, options));
+            }
+        });
+    };
+
+})(jQuery, window, document);

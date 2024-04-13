@@ -1,0 +1,131 @@
+var refreshDocumentTableView = function(element) {
+
+    var $trs = $(element).find('.document-row').addBack('.document-row');
+    var $lastRow = $(element).find('.document-row').last();
+
+    $trs.each(function(index, element) { // Loop through each row
+
+        var $tr = $(this);
+        var $uploadButton = $tr.find('.file-upload-button');
+        var $closeButton = $tr.find('button.remove-file');
+        var $addButton = $tr.find('button.add-file');
+
+        // Set the row default
+        $uploadButton.closest('.btn').find('.file-upload-button-text').html('Upload');
+        $closeButton.hide();
+        $addButton.hide();
+        $uploadButton.removeAttr('disabled').closest('span.btn').removeClass('disabled');
+
+        if (!_origo.isEmptyElement($tr.find('.file-name'))) { // If a document is assigned to this row
+
+            // Change the upload button to 'Change' and show the 'x' button
+            $uploadButton.closest('.btn').find('.file-upload-button-text').html('Change');
+            $closeButton.show();
+
+            // If this is the last row, add a new document row
+            /*
+                if ($(this)[0] === $lastRow[0]) {
+                    addNewDocumentRow();
+                }
+                */
+
+        } else if ($tr.hasClass('non-required-document')) {
+
+            // If no document is assigned to this row
+            // and this row is a non-required document row
+
+            if ($(this)[0] === $lastRow[0]) {
+                $addButton.show(); // Show '+' button for the last row
+            } else {
+                $closeButton.show(); // Show 'x' button otherwise
+            }
+
+            var $input = $tr.find(':input.document-name-input:visible');
+            if ($input.length > 0 && !$.trim($input.val())) {
+                $uploadButton.attr('disabled', 'disabled').closest('span.btn').addClass('disabled');
+            }
+        }
+    });
+};
+
+var setUpFileUploadButton = function(element) {
+
+    $(element).find('.file-upload-button').each(function() {
+
+        $(this).fileupload({
+            dataType: 'json',
+            // Set up form data
+            submit: function(e, data) {
+
+                data.formData = {};
+
+                var $tr = $(this).closest('tr');
+                var documentId = $tr.data('document-id');
+                var documentName = $tr.find(':input.document-name-input:visible').val() || $tr.data('document-name');
+                var nominationId = $tr.data('nomination-id')
+
+                if (documentId) {
+                    data.formData.documentId = documentId;
+                }
+                if (documentName) {
+                    data.formData.documentName = documentName;
+                }
+                if (nominationId) {
+                    data.formData.nominationId = nominationId;
+                }
+            },
+            // Reset the File Name, File Size, Progress Bar, Upload Button
+            start: function(e) {
+                var $tr = $(this).closest('tr');
+                $tr.find('.file-name').empty().hide();
+                $tr.find('.file-size').empty().hide();
+                $tr.find('.progress').show();
+                $tr.find('.fileinput-button').addClass('disabled').find(':input').attr('disabled', 'disabled');
+                $tr.find('button.remove-file').hide();
+            },
+            // Update the Progress Bar while uploading
+            progressall: function(e, data) {
+                var $tr = $(this).closest('tr');
+                var progress = parseInt(data.loaded / data.total * 90, 10);
+                $tr.find('.progress').show();
+                $tr.find('.progress-bar').attr('aria-valuenow', progress).css('width', progress + '%');
+            },
+            // Callback after upload
+            done: function(e, data) {
+
+                var $tr = $(this).closest('tr');
+                $tr.find('.progress-bar').attr('aria-valuenow', 100).css('width', '100%');
+
+                if (data.result.documentId) {
+                    $tr.data('document-id', data.result.documentId);
+                }
+
+                if (data.result.documentName) {
+                    $tr.data('document-name', data.result.documentName);
+                }
+
+                // Setup the File Name, File Size, Progress Bar, Upload Button 1 second after upload complete
+                setTimeout(function() {
+
+                    if (data.result.error) {
+                        $tr.find('.file-name').show().append('<span class="text-danger">' + data.result.error + '</span>');
+                    } else {
+                        $tr.find('.file-name').show().append(data.result.fileName);
+                        $tr.find('.file-size').show().append(data.result.fileSize);
+                        $tr.find('.document-name').html(data.result.documentName);
+                        $tr.find(':input.document-name-input').hide();
+                    }
+
+                    $tr.find('.progress').hide();
+                    $tr.find('.progress-bar').attr('aria-valuenow', 0).css('width', 0);
+                    $tr.find('.fileinput-button').removeClass('disabled').find(':input').removeAttr('disabled');
+                    $tr.find('button.remove-file').show();
+
+                    refreshDocumentTableView($tr);
+
+                }, 1000);
+            }
+        });
+    });
+};
+

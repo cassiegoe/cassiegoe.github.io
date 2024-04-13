@@ -1,0 +1,327 @@
+$(document).ready(function() {
+
+    // ************************************
+    // Setup individual form validations
+    // ************************************
+
+    if ($('#body-app-step-index').length > 0) {
+
+        var $nextStep = $('#next-step');
+
+        $nextStep.click(function(e) {
+
+            e.preventDefault();
+
+            if ($('#step-index-confirm:checked').length < 1) {
+                bootbox.alert('You are required to read the online procedure.');
+            } else {
+                window.location.href = this.href;
+            }
+        });
+    }
+
+    if ($("#body-app-step-information").length > 0) {
+
+        $("#form-app-step-information").applicationForm({
+            'step': 'information'
+        });
+    }
+
+    if ($("#body-app-step-language").length > 0) {
+
+        $("#form-app-step-language").applicationForm({
+            'step': 'language'
+        });
+    }
+
+    if ($("#body-app-step-current").length > 0) {
+
+        $("#form-app-step-current").applicationForm({
+            'step': 'current'
+        });
+    }
+
+    if ($("#body-app-step-proposed").length > 0) {
+
+        // form-application-proposed.js
+        $("#form-app-step-proposed").applicationForm({
+            'step': 'proposed'
+        });
+        $("#form-app-step-proposed").on('change', ':input[name="study_mode"]', function(e) {
+            if ($(this).val() == 'Visiting - Research postgraduate') {
+                $('#id_proposed_period_from, #id_proposed_period_to').addClass('hide');
+                $('#id_visiting_from_to').removeClass('hide');
+            }
+            else {
+                $('#id_proposed_period_from, #id_proposed_period_to').removeClass('hide');
+                $('#id_visiting_from_to').addClass('hide');
+            }
+        });
+
+    }
+
+    if ($("#body-app-step-statement").length > 0) {
+
+        $("#form-app-step-statement").applicationForm({
+            'step': 'statement'
+        });
+    }
+
+    if ($('#body-app-step-documents').length > 0 || $('#body-app-account-documents').length > 0) {
+
+        var $thisTable = $('#documents-table-new');
+
+        setUpFileUploadButton($thisTable);
+        refreshDocumentTableView($thisTable);
+
+        $('#documents-next-step').click(function(e) {
+            e.preventDefault();
+            var that = this;
+            $.ajax({
+                dataType: "json",
+                type: 'GET',
+                url: $(that).data('confirm-url'),
+                success: function(result) {
+
+                    if (result) {
+                        window.location.href = that.href;
+                    } else {
+                        bootbox.alert('Please upload all supporting documents before proceeding to next step.');
+                    }
+                }
+            });
+        });
+    }
+
+    if ($('#body-app-step-declaration').length > 0) {
+
+        var $submitButton = $('#step-review-submit');
+        var $statementPopup = $('#statement-popup');
+
+        $submitButton.click(function(e) {
+
+            e.preventDefault();
+
+            if ($('#step-review-confirm:checked').length < 1) {
+                bootbox.alert('You are required to agree with the <strong>Personal Information Collection Statement</strong>.');
+            } else if ($('#step-review-confirm-2:checked').length < 1) {
+                bootbox.alert('You are required to confirm the information and documents provided are correct, complete and true to the best of your knowledge and belief.');
+            } else {
+                window.location.href = this.href;
+            }
+        });
+
+        $statementPopup.click(function(e) {
+
+            e.preventDefault();
+
+            bootbox.dialog({
+                onEscape: function() {
+                    return true;
+                },
+                message: "<ol>" +
+                    "<li>This is a statement to inform you of your rights under the Personal Data (Privacy) Ordinance.</li>" +
+                    "<li>Personal information is provided by the applicant through the completion of application forms and online application system designated for visa application purpose. Data collected are used specifically for the purpose prescribed in the application forms and will serve as part of the applicant's official student records.</li>" +
+                    "<li>It is possible that information submitted electronically can be accessed by a third party during the processing period.</li>" +
+                    "<li>Personal data will be kept confidential and handled by the University's staff members. The University will transfer the data to ImmD to fulfill its administrative functions.</li>" +
+                    "<li>You have the right to request access to and to correct information held by us. If you wish to access or correct your personal data, please send a request to the Office of International Student Exchange at <a href=\"mailto:exchange@hku.hk\">exchange@hku.hk</a>.</li>" +
+                    "</ol>",
+                title: 'Personal Information Collection Statement',
+                buttons: {
+                    confirm: {
+                        label: "Confirm",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        });
+    }
+
+    if ($('#body-app-status').length > 0) {
+
+        $buttonAcceptOffer = $('#accept-offer');
+        $buttonDeclineOffer = $('#decline-offer');
+
+        $buttonAcceptOffer.click(function(e) {
+            e.preventDefault();
+
+            bootbox.dialog({
+                onEscape: function() {
+                    return true;
+                },
+                message: "<p>" +
+                    "You need to upload a signed reply slip before accepting the offer." +
+                    "</p>" +
+                    '<div class="row">' +
+                    '<div class="col-md-12"> ' +
+                    '<a class="btn btn-default">Upload Signed Reply Slip</a>' +
+                    '</div>' +
+                    '</div>',
+                title: 'Accept Offer',
+                buttons: {
+                    cancel: {
+                        label: "Cancel",
+                        className: "btn-default"
+                    },
+                    confirm: {
+                        label: "Accept Offer",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        });
+
+        $buttonDeclineOffer.click(function(e) {
+            e.preventDefault();
+            bootbox.confirm('Are you sure to decline this offer?', function(e) {
+
+            });
+        });
+    }
+
+    if ($('#body-app-account-status').length > 0) {
+
+        $('#accept-offer').click(function(e) {
+
+            e.preventDefault();
+            var that = this;
+
+            // Get dialog's HTML by Ajax
+            $.ajax({
+                dataType: "json",
+                type: 'GET',
+                url: $(that).data('dialog-url'),
+                success: function(result) {
+                    var d = new Date();
+                    var ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+                    var mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d);
+                    var da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+                    var today = `${ye}-${mo}-${da}`;
+
+                    result = result.replace('t_o_d_a_y', today);
+
+                    var $dialogContent = $(result);
+
+                    var $bootbox = bootbox.dialog({
+                        message: $(result),
+                        onEscape: function() {
+                            return true;
+                        },
+                        buttons: {
+                            "Cancel": {
+                                className: "btn-default",
+                            },
+                            "Accept Offer": {
+                                className: "btn-primary",
+                                callback: function() {
+                                    var sign_date = $(':input[name="sign_date"]').val()
+                                    var sign_name = $(':input[name="sign_name"]').val()
+                                    if (!sign_name || sign_name.length < 2) {
+                                        bootbox.alert('You have to input your full name to accept the offer.');
+                                        return false;
+                                    }
+
+                                    // Confirm if the signed reply slip has been uploaded by Ajax
+                                    $.ajax({
+                                        dataType: "json",
+                                        type: 'GET',
+                                        url: $(that).data('has-document-url'),
+                                        success: function(result) {
+
+                                            if (result) {
+                                                bootbox.confirm('Are you sure to accept the faculty offer?', function(ans) {
+                                                    if (ans) {
+
+                                                        // Accept the offer by Ajax
+                                                        $.ajax({
+                                                            dataType: "json",
+                                                            type: 'GET',
+                                                            url: $(that).data('url'),
+                                                            data: { 'sign_name': sign_name, 'sign_date': sign_date },
+                                                            success: function(result) {
+
+                                                                if (result) {
+                                                                    bootbox.alert('You have accepted the faculty offer.', function() {
+                                                                        location.reload();
+                                                                    });
+                                                                } else {
+                                                                    bootbox.alert('Unexpected error occured.');
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+                                                });
+                                            } else {
+                                                bootbox.alert('You must upload a signed reply slip before accepting the faculty offer.');
+                                            }
+                                        }
+                                    });
+                                    return true;
+                                }
+                            }
+                        }
+                    });
+
+                    // Setup the file upload button
+                    setUpFileUploadButton($bootbox);
+                }
+            });
+        });
+
+        $('#decline-offer').click(function(e) {
+            e.preventDefault();
+            var that = this;
+            bootbox.confirm('Are you sure to decline the faculty offer?', function(ans) {
+                if (ans) {
+                    $.ajax({
+                        dataType: "json",
+                        type: 'GET',
+                        url: $(that).data('url'),
+                        success: function(result) {
+                            if (result) {
+                                bootbox.alert('You have declined the faculty offer.', function() {
+                                    location.reload();
+                                });
+                            } else {
+                                bootbox.alert('Unexpected error occured.');
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    }
+
+    if ($(
+        '#body-app-account-status'
+      + ',#body-app-step-information'
+      + ',#body-app-step-language'
+      + ',#body-app-step-current'
+      + ',#body-app-step-proposed'
+      + ',#body-app-step-statement'
+      + ',#body-app-step-documents'
+    ).length > 0) {
+        $('#js-withdraw-application').click(function(e) {
+            e.preventDefault();
+            var that = this;
+            bootbox.confirm('Are you sure to withdraw the application? <strong>This process cannot be reverted</strong>.', function(ans) {
+                if (ans) {
+                    $.ajax({
+                        dataType: "json",
+                        type: 'GET',
+                        url: $(that).data('url'),
+                        success: function(result) {
+                            if (result) {
+                                bootbox.alert('You have withdrawn the application.', function() {
+                                    location.reload();
+                                });
+                            } else {
+                                bootbox.alert('Unexpected error occured.');
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    }
+});
