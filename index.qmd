@@ -110,6 +110,10 @@ Given that targeted shootings are the predominant type, it also prompts the ques
 The majority of school shooting incidents tend to occur during the school day, typically between 7 am and 3 pm, coinciding with regular class hours. While shootings are scattered throughout these hours, no discernible patterns emerge regarding specific timings. However, delving deeper into individual school schedules could unveil correlations between timing of attacks and the current period. For instance, more shootings could happen during lunch periods due to lower levels of supervision. However, despite the dispersed nature of school shootings, a peak emerges, with the highest concentration of incidents occurring at 12 pm.
 
 ## Conclusion
+In  a survey conducted, a substantial number of teenagers in the US (57%) and parents of children within the same age group (63%) express anxiety regarding the potential occurrence of a school shooting occurring at their school [9]. This fear is indicative of the profound impact that school shootings have had on communities, disrupting the sense of safety and security that schools should inherently provide. However, the reality of school shootings has shattered this ideal, leaving many feeling vulnerable and uncertain. This underscores the urgent need to address the root causes of gun violence comprehensively. 
+
+While we've discussed several factors contributing to school shootings, there are undoubtedly many others that warrant further analysis. Moving forward, it's imperative to delve deeper into which other potential factors could influence the occurrence of school shootings to develop more effective prevention strategies. One approach could involve conducting longitudinal studies tracking the trajectories of individuals involved in school shootings could provide valuable insights into the early warning signs and risk factors associated with perpetration.
+
 
 ## References
 [1] https://www-cdc-gov.libproxy1.nus.edu.sg/violenceprevention/firearms/firearm-research-findings.html#:~:text=Taking%20into%20account%20all%20types,19%20in%202020%20and%202021.
@@ -129,6 +133,9 @@ Understanding and Preventing Violence: Volume 1. (1993). National Academies Pres
 [7] https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Handguns-in-the-Home.aspx
 
 [8] Siegel, M., Ross, C. S., & King, C., 3rd (2013). The relationship between gun ownership and firearm homicide rates in the United States, 1981-2010. American journal of public health, 103(11), 2098–2105. https://doi-org.libproxy1.nus.edu.sg/10.2105/AJPH.2013.301409 
+
+[9] https://www.pewresearch.org/short-reads/2023/04/26/what-the-data-says-about-gun-deaths-in-the-u-s/
+
 
 </body>
 </html>

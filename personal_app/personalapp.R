@@ -73,9 +73,9 @@ ui <- fluidPage(
     column(
       width = 6,
       card(
-        style = " font-size: 13px; background-color: #E9C874; font-family: Arial, sans-serif;", 
+        style = " font-size: 13px; background-color: #FEFDED; font-family: Arial, sans-serif;", 
         card_header(
-         style = "background-color: #9CAFAA;",
+         style = "background-color: #D37676;",
          strong("What can be done?", style="text-align: justify; font-size: 15px;"),
         ),
         markdown(

@@ -45,7 +45,8 @@ server <- function(input, output) {
            y = "Number of Shootings",
            title = "School Shootings Over the Years") +
       theme_minimal()
-    ggplotly(p)
+    ggplotly(p) %>%
+      config(displayModeBar = FALSE)
   })
   
 }

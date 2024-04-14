@@ -47,9 +47,9 @@ ui <- fluidPage(
   fluidRow(
     column(6, 
            card(
-             style = " font-size: 13px; background-color: #E9C874; font-family: Arial, sans-serif;", 
+             style = " font-size: 13px; background-color: #FEFDED; font-family: Arial, sans-serif;", 
              card_header(
-               style = "background-color: #9CAFAA;",
+               style = "background-color: #D37676;",
                strong("What can be done?", style="text-align: justify; font-size: 15px;")),
     markdown(
       "- **Safe gun storage:** Implementing secure firearm storage practices in households 
@@ -69,7 +69,7 @@ ui <- fluidPage(
          card(style = "font-size: 13px; background-color: white; font-family: Arial, sans-serif;", 
               card_header(
                 style = "background-color: #9CAFAA;",
-                strong("View Firearms Used in Deadliest School Shootings:", style="text-align: justify; font-size: 15px;")),
+                strong("Firearms Used in Deadliest School Shootings:", style="text-align: justify; font-size: 15px;")),
               slickROutput("slickr", width="300px"))
   ))
   

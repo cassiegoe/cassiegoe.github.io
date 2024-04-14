@@ -44,7 +44,7 @@ server <- function(input, output) {
   #Age plot
   output$age_plot <- renderPlotly({
     x <- ggplot(data = shooting_data, aes(x=age_shooter1,
-                                          text = paste("Age of Soooter: ",age_shooter1, "<br>",
+                                          text = paste("Age of Shooter: ",age_shooter1, "<br>",
                                                        "Total Shootings: ", Incidents))) +
       geom_bar(fill = "#af4444",color = "#dee2d0", width = 1) +
       labs(title = "Age of Shooter",
