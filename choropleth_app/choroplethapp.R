@@ -25,10 +25,10 @@ label = list(
 ui <- fluidPage(
 
   navbarPage("Filter by:",
-           tabPanel("Total Incidents Across Years",
+           tabPanel("Total Shootings Across Years",
            mainPanel(plotlyOutput("choropleth",width = "150%"))),
            
-           tabPanel("Total Incidents by Year",
+           tabPanel("Total Shootings By Year",
             mainPanel(plotlyOutput("choropleth2", width = "150%")))
 )
 

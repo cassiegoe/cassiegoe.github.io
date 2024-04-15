@@ -28,7 +28,7 @@ ui <- fluidPage(
     fluidRow(
       column(
         8, align = "center",
-        plotlyOutput("shooting_plot")
+        plotlyOutput("shooting_plot", width = "120%")
       )
     ))
 )

@@ -64,16 +64,16 @@ ui <- fluidPage(
       p("The majority of perpetrators involved in targeted shootings are typically 
         current or former members of a school community, where their primary motive often 
         stems from seeking revenge due to real or perceived mistreatment by a particular individual 
-        or group [4]. This mistreatment encompasses any form of harm, injustice, or abuse experienced 
+        or group", span("[4]", style = "color: #2780e3;"),". This mistreatment encompasses any form of harm, injustice, or abuse experienced 
         by the perpetrator at the hands of specific individuals or groups within the school. For instance, both perpetrators 
-        and victims of bullying show a higher correlation with violent behavior and weapon carrying [5]. 
+        and victims of bullying show a higher correlation with violent behavior and weapon carrying ", span(" [5]", style = "color: #2780e3;"),". 
         The primary motives of shooters could reflect deeper systemic issues that can encompass various 
         aspects, including racial discrimination. ", style="text-align: justify; font-size: 15px;")
     ),
     column(
       width = 6,
       card(
-        style = " font-size: 13px; background-color: #FEFDED; font-family: Arial, sans-serif;", 
+        style = " font-size: 13px; background-color: #F0EBE3; font-family: Arial, sans-serif;", 
         card_header(
          style = "background-color: #D37676;",
          strong("What can be done?", style="text-align: justify; font-size: 15px;"),

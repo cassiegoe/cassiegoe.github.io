@@ -30,15 +30,15 @@ ui <- fluidPage(
              incidents through theft from their family members or homes, with a striking 
              87% of them falling within the adolescent age range of 10 to 19. 35% of families 
              with children reported owning at least one firearm, and of these, 69% possessed 
-             multiple firearms [6]. However, the storage of these firearms appears to be relatively 
+             multiple firearms ", span("[6]", style = "color: #2780e3;"),". However, the storage of these firearms appears to be relatively 
              accessible to children, with 9% of homes leaving their firearms unlocked and loaded, 
              and an additional 4% leaving them unlocked and unloaded but stored with ammunition. 
              This leaves 13% of homes particularly vulnerable to children gaining access to firearms. The 
              heightened accessibility to weapons increases the risk of unintentional shootings by four times, 
-             the risk of suicide by four times, and the risk of homicide by three times [7]. Moreover, 
+             the risk of suicide by four times, and the risk of homicide by three times ", span("[7]", style = "color: #2780e3;"),". Moreover, 
              the next prevalent method of firearm acquisition is through legal purchases by the shooters 
              themselves. According    to Siegel et al. (2013), there is a notable correlation between higher 
-             levels of gun ownership and increased firearm homicide rates [8]. Thus, gun availability is a 
+             levels of gun ownership and increased firearm homicide rates", span("[8]", style = "color: #2780e3;"),".Thus, gun availability is a 
              risk factor for homicide.",  style="text-align: justify; font-size: 15px;"),
 
   
@@ -47,7 +47,7 @@ ui <- fluidPage(
   fluidRow(
     column(6, 
            card(
-             style = " font-size: 13px; background-color: #FEFDED; font-family: Arial, sans-serif;", 
+             style = " font-size: 13px; background-color: #F0EBE3; font-family: Arial, sans-serif;", 
              card_header(
                style = "background-color: #D37676;",
                strong("What can be done?", style="text-align: justify; font-size: 15px;")),
