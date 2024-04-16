@@ -27,7 +27,7 @@ ui <- fluidPage(
   br(),
   br(),
            p("A significant portion of shooters acquired their weapons used in shooting 
-             incidents through theft from their family members or homes, with a striking 
+             incidents through their family members or from their homes, with a striking 
              87% of them falling within the adolescent age range of 10 to 19. 35% of families 
              with children reported owning at least one firearm, and of these, 69% possessed 
              multiple firearms ", span("[6]", style = "color: #2780e3;"),". However, the storage of these firearms appears to be relatively 
